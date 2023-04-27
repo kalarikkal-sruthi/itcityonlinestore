@@ -1,0 +1,11 @@
+.productsingle h3{
+    text-align: initial;
+    font-weight: 700;
+}
+.productsingle h5{
+    text-align: initial;
+}
+.qty{
+    background: white;
+    border: 2px solid #f5831a;
+}

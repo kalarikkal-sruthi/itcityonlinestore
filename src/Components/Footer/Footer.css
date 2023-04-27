@@ -1,0 +1,27 @@
+.footer-icons {
+    position: fixed;
+    z-index: 999;
+    bottom: 0px;
+    background: white;
+    width: 100%;
+}
+
+.footer-icons-link {
+    justify-content: space-around;
+
+}
+
+.nav.footer-icons-link .nav-item a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav.footer-icons-link .nav-item h6 {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.footer-icons .nav-link {
+    padding: 0px;
+    text-decoration: none;
+}

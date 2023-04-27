@@ -1,0 +1,29 @@
+.empty-cart {
+    min-height: 60vh;
+}
+
+.empty-cart img {
+    width: 120px;
+    margin: 0px auto;
+}
+
+.shopping-btn {
+    text-decoration: none;
+    background: #000;
+    width: auto;
+    padding: 5px 24px;
+    margin: 15px 0px;
+    font-size: 18px;
+
+}
+
+.empty-font {
+    color: #858687;
+}
+
+.cartpagetable {
+
+    padding: 10px;
+    text-align: initial;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}

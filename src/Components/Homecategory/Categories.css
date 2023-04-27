@@ -1,0 +1,29 @@
+.dd {
+  width: 75px;
+  margin: 0px 10px;
+}
+.dd img {
+  width: 60px;
+}
+.dd p {
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0px 0px 0px;
+  letter-spacing: .5px;
+}
+.category-main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categories {
+  padding: 0px 0px 0px 0px;
+  /* min-width: 100%; */
+  display: flex;
+  overflow-x: auto;
+}
+.categories::-webkit-scrollbar {
+  display: none;
+}
