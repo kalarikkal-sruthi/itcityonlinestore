@@ -2,8 +2,6 @@ import React, { useState,useEffect } from 'react'
 import Categories from '../../Components/Homecategory/Homecategory'
 import Banner from '../../Components/Homebanner/Homebanner'
 import Categoryaccessories from '../../Components/Homecategories/Categoryaccessories'
-
-import Productlist from '../../Components/Productlist/Productlist'
 import Categorycomputer from '../../Components/Homecategories/Categorycomputer'
 import Categorymobile from '../../Components/Homecategories/Categorymobile'
 import Categorytablet from '../../Components/Homecategories/Categorytablet'
@@ -20,8 +18,7 @@ import Categorygaming from '../../Components/Homecategories/Categorygaming'
 function Homepage() {
     return (
         <div>
-            {/* <Productlist/> */}
-            {/* <Categoryproductpage/> */}
+       
             <Banner />
             <Categories />
             <Categoryaccessories/>

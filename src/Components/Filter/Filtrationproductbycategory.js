@@ -1,8 +1,8 @@
 import {React,useEffect} from 'react'
 import { fetchAsyncsubcategorybycategory,getsubcategory } from '../../Redux/filterSlice';
-import { useParams,Link } from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
-import Productlist from '../Productlist/Productlist';
+import { Link } from 'react-router-dom';
+
 
 function Filtrationproductbycategory({category}) {
     const dispatch=useDispatch()
@@ -21,8 +21,8 @@ function Filtrationproductbycategory({category}) {
        
     subcategories.map((value,index)=>{
 return( 
-    
-   <p>{value.cat_name}<span></span></p>
+  <Link to={`/category/${value.cat_id}`} className='text-dark text-decoration-none' key={index}>
+   <p>{value.cat_name}<span></span></p></Link>
  
    )
       

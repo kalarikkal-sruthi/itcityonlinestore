@@ -11,13 +11,13 @@ import Filtrationproductbycategory from './Filtrationproductbycategory';
 import { useParams } from 'react-router-dom';
 import Filtrationbybrand from './Filtrationbybrand';
 import Filtrationbycolor from './Filtrationbycolor';
-
+import { useTranslation } from 'react-i18next';
 
 
 
 function Filter() {
-  const {category}=useParams()
-  console.log(category);
+  const { t, i18n } = useTranslation();
+  const {category_id}=useParams()
   const [expanded, setExpanded] = useState(false)
   const [expandedtwo, setExpandedtwo] = useState(false)
   const [expandedthree, setExpandedthree] = useState(false)
@@ -30,7 +30,7 @@ function Filter() {
         <div className='filter '>
 
 
-          <h5 className="fw-bold mb-0" onClick={() => { setExpanded(!expanded) }}>Categories</h5>
+          <h5 className="fw-bold mb-0" onClick={() => { setExpanded(!expanded) }}>{t("Categories")}</h5>
 
           <Button style={{ backgroundColor: "white", color: '#f5831a;' }} className=" border-0" onClick={() => { setExpanded(!expanded) }}>
             {
@@ -42,12 +42,12 @@ function Filter() {
         </div>
         {!expanded &&
           <>
-           <Filtrationproductbycategory category={category}/>
+           <Filtrationproductbycategory category={category_id}/>
           </>
         }
         <hr></hr>
         <div className='filter'>
-          <h5 className="fw-bold mb-0" onClick={() => { setExpandedfour(!expandedfour) }}>Price</h5>
+          <h5 className="fw-bold mb-0" onClick={() => { setExpandedfour(!expandedfour) }}>{t("Price")}</h5>
           <Button style={{ backgroundColor: "white", color: '#f5831a;' }} className=" border-0" onClick={() => { setExpandedfour(!expandedfour) }}>
             {!expandedfour ? <RemoveOutlinedIcon sx={{ color: "#f5831a;" }} variant="outline" /> : <AddOutlinedIcon sx={{ color: "#f5831a;" }} variant="outlined" />
             }
@@ -70,7 +70,7 @@ function Filter() {
         }
         <hr></hr>
         <div className='filter'>
-          <h5 className="fw-bold mb-0" onClick={() => { setExpandedtwo(!expandedtwo) }}>Brand</h5>
+          <h5 className="fw-bold mb-0" onClick={() => { setExpandedtwo(!expandedtwo) }}>{t("Brand")}</h5>
           <Button style={{ backgroundColor: "white", color: '#f5831a;' }} className=" border-0" onClick={() => { setExpandedtwo(!expandedtwo) }}>
 
             {!expandedtwo ? <RemoveOutlinedIcon sx={{ color: "#f5831a;" }} variant="outline" /> : <AddOutlinedIcon sx={{ color: "#f5831a;" }} variant="outlined" />
@@ -95,7 +95,7 @@ function Filter() {
         }
         <hr></hr>
         <div className='filter'>
-          <h5 className="fw-bold text-start" onClick={() => { setExpandedthree(!expandedthree) }}>Color</h5>
+          <h5 className="fw-bold text-start" onClick={() => { setExpandedthree(!expandedthree) }}>{t("Color")}</h5>
           <Button style={{ backgroundColor: "white", color: '#f5831a;' }} className=" border-0" onClick={() => { setExpandedthree(!expandedthree) }}>
             {!expandedthree ? <RemoveOutlinedIcon sx={{ color: "#f5831a;" }} /> : <AddOutlinedIcon sx={{ color: "#f5831a;" }} />
             }

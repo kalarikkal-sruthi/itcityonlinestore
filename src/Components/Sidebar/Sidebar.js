@@ -30,7 +30,7 @@ function Sidebar() {
         </button>
      
           <div className='sidebar-cnt'>
-            <div className='cat-title fs-5 text-uppercase fw-6 ls-1h'>All Categories</div>
+            <div className='cat-title fs-8 text-uppercase fw-6 ls-1h'>All Categories</div>
             <ul className='cat-list p-0'>
               {
                 categories.map((value, index) => {

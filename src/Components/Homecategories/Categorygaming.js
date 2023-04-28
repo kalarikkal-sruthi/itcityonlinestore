@@ -8,8 +8,9 @@ import { getHomegame } from '../../Redux/homeSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
 import { getCountry } from '../../Redux/countrySlice';
-
+import { useTranslation } from 'react-i18next';
 function Categorygaming() {
+  const { t, i18n } = useTranslation();
     const dispatch=useDispatch();
     const country=useSelector(getCountry)
     console.log("country",country);
@@ -24,11 +25,11 @@ function Categorygaming() {
     <div className='bestdeals'>
         <div className='bestdeals-head'>
             <h3 className='pe-5'>
-Gaming Collections
+{t("Gaming Collections")}
 </h3>
         </div>
         <div className='bestdeals-view'>
-          <Link to={`/category/${166}`}><Button >View All</Button></Link>
+          <Link to={`/category/${166}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
     <div className='content'>
@@ -41,7 +42,7 @@ Gaming Collections
                   <p style={{ fontWeight: ' 600', fontSize: '14px', marginBottom: '0.5rem', fontWeight: '600' }}>{value.product_name}</p>
                   <p style={{ fontSize: '18px', marginBottom: "4px", color: "#f5831a" }} className="  ">{value.product_price_offer.toFixed(3)}{country}</p>
                   <div className="font-body"><span style={{ MarginBottom: '4px', textDecoration: "line-through", fontSize: '14px' }} className=" ">{value.product_price.toFixed(3)}{country}</span>  <span className="" style={{ background: '#f5831a', padding: '3px 3px', fontSize: "12px", color: "white" }}>27%</span></div>
-                  <Button className='w-100 newbtn' ><ShoppingCartOutlinedIcon />Add To Cart</Button>
+                  <Button className='w-100 newbtn' ><ShoppingCartOutlinedIcon />{t("Add To Cart")}</Button>
               </div>
               </Link>
           )

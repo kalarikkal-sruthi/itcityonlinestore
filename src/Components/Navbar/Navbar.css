@@ -76,12 +76,14 @@ span.navbar-toggler-icon {
 }
 
 #searchQuerySubmit {
-  width: 3.5rem;
-  height: 2.8rem;
-  margin-left: -3.5rem;
+  display: flex;
+  /* width: 3.5rem; */
+  /* height: 2.8rem; */
+  margin-left: -5.5rem;
   background: none;
   border: none;
   outline: none;
+
 }
 
 #searchQuerySubmit:hover {

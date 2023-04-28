@@ -43,12 +43,12 @@ export const fetchAsynchometablets = createAsyncThunk(
   }
 );
 
+
+
 export const fetchAsynchomehome = createAsyncThunk(
   'home/fetchAsynchomehome',
-  
   async (cur) => {
-   
-    const response = await APIClient.get(`/findlimtProductbyCategoryid?cur=${cur}&category_id=99`);
+    const response = await APIClient.get(`/findlimtProductbyCategoryid?cur=${cur}&category_id=120`);
     const data = await response.data.data;
     return data;
   }
@@ -72,7 +72,7 @@ export const fetchAsynchometravel = createAsyncThunk(
 export const fetchAsynchomepersonalcare = createAsyncThunk(
   'home/fetchAsynchomepersonalcare',
   async (cur) => {
-    const response = await APIClient.get(`/findlimtProductbyCategoryid?cur${cur}&category_id=133`);
+    const response = await APIClient.get(`/findlimtProductbyCategoryid?cur${cur}&category_id=139`);
     const data = await response.data.data;
     return data;
   }
@@ -115,9 +115,6 @@ const initialState={
     homecamera:[],
     homeoffer:[],
     homegame:[],
-
-    
-
 }
 const homeSlice = createSlice({
      name:"home",
@@ -125,12 +122,7 @@ const homeSlice = createSlice({
      reducers:{},
      extraReducers:(builder) => {
         builder
-        .addCase(fetchAsynchome.fulfilled, (state, action) => {
-          state.homeslider = action.payload;
-        })
-        .addCase(fetchAsynchome.rejected, () => {
-          console.log('rejected');
-        })
+       
         .addCase(fetchAsynchomeaccessories.fulfilled, (state, action) => {
           state.homeaccessories = action.payload;
         })
@@ -159,6 +151,12 @@ const homeSlice = createSlice({
         .addCase( fetchAsynchometablets.rejected, () => {
           console.log('rejected');
         })
+        // .addCase(fetchAsynchome.fulfilled, (state, action) => {
+        //   state.homeslider = action.payload;
+        // })
+        // .addCase(fetchAsynchome.rejected, () => {
+        //   console.log('rejected');
+        // })
 
         .addCase( fetchAsynchomehome.fulfilled, (state, action) => {
           state.homehome = action.payload;
@@ -184,12 +182,7 @@ const homeSlice = createSlice({
         })
 
 
-        .addCase( fetchAsynchomepersonalcare.fulfilled, (state, action) => {
-          state.homepersonalcare = action.payload;
-        })
-        .addCase( fetchAsynchomepersonalcare.rejected, () => {
-          console.log('rejected');
-        })
+        
 
 
 
@@ -214,7 +207,13 @@ const homeSlice = createSlice({
         .addCase(fetchAsynchomegame.rejected, () => {
           console.log('rejected');
         })
-     
+
+        .addCase( fetchAsynchomepersonalcare.fulfilled, (state, action) => {
+          state.homepersonalcare = action.payload;
+        })
+        .addCase( fetchAsynchomepersonalcare.rejected, () => {
+          console.log('rejected');
+        })
       
 
   

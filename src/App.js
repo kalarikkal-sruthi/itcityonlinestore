@@ -13,6 +13,9 @@ import Categories from './Components/Homecategory/Homecategory';
 import Payment from './Pages/Payment/Payment';
 import { Register } from './Pages/Register/Register';
 import Account from './Pages/Register/Account';
+import Footercategoris from './Components/Footercategoris/Footercategoris';
+import Profile from './Pages/Register/Profile';
+import Mywhishlist from './Pages/Register/Mywhishlist';
 
 
 
@@ -45,16 +48,19 @@ function App() {
       <Route path='/search' element={<Searchpage/>}></Route>  
       </Routes>
       <Routes>
-        <Route path='/categories' element={<Categories/>}></Route>
+        <Route path='/categories' element={<Footercategoris/>}></Route>
       </Routes>
       <Routes>
-        <Route path='/profile' element={<Categories/>}></Route>   
+        <Route path='/profile' element={<Profile />} ></Route>   
       </Routes>
       <Routes>
         <Route path='/payment' element={<Payment/>}></Route>          
       </Routes>
       <Routes>
         <Route path='/account' element={<Account/>}></Route>          
+      </Routes>
+      <Routes>
+        <Route path='/whishlist' element={<Mywhishlist/>}></Route>          
       </Routes>
       <Routes>
         <Route path='/login' element={<Register/>}></Route>          

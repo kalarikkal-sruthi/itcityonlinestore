@@ -12,10 +12,10 @@ import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { getCountry } from '../../Redux/countrySlice';
-
+import { useTranslation } from 'react-i18next';
 
 function Productsinglepage() {
-
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const { product_id } = useParams()
   const [product_qty, setProduct_qty] = useState(1);
@@ -25,7 +25,6 @@ function Productsinglepage() {
   const country=useSelector(getCountry);
   useEffect(() => {
     dispatch(fetchAsyncproducts({ product: product_id, cur: country }));
-  
     if (cartmessage) {
       setTimeout(() => {
         dispatch(setCartMessageOff());
@@ -68,7 +67,7 @@ function Productsinglepage() {
                   <h5>{value.product_price_offer.toFixed(3)}{country}</h5>
                   <h5 style={{ MarginBottom: '4px', textDecoration: "line-through", fontSize: '14px' }}>{value.product_price.toFixed(3)}</h5>
                   <div className='qty-change d-flex align-center '>
-                    <h5>Quantity:</h5>
+                    <h5>{t("Quantity")}:</h5>
                     <button type="button" className='qty qty-decrease flex align-center justify-center' onClick={decreaseQty} >
                       <RemoveOutlinedIcon variant="outlined" />
                     </button>
@@ -78,7 +77,7 @@ function Productsinglepage() {
                     </button>
                   </div>
                   <div className='text-start py-4'>
-                    <Button className=' bg-dark border-0' onClick={() => { addToCartHandler(value) }} ><ShoppingCartOutlinedIcon />add to cart</Button>
+                    <Button className=' bg-dark border-0' onClick={() => { addToCartHandler(value) }} ><ShoppingCartOutlinedIcon />{t("Add To Cart")}</Button>
                   </div>
 
                 </Col>

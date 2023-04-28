@@ -4,7 +4,7 @@
     padding: 20px 14px;
 }
 .bestdeals-head h3 {
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 0px;
     font-weight: bold;
 }
@@ -97,7 +97,8 @@
 }
 .newdesign {
     padding: 0px 20px 10px 20px;
-    margin: 0px 0px 10px 0px;
+    /* margin: 0px 0px 10px 0px; */
+    margin: 0px 5px 10px 5px;
     /* margin: 0px 25px 10px 25px; */
     /* padding: 0px 10px 10px 10px;
     margin: 0px 0px 10px 0px; */

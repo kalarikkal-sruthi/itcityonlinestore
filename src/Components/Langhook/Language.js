@@ -2,16 +2,16 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './Language.css'
 function Language() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const changeLanguage = (event) => {
     i18n.changeLanguage(event.target.value);
   };
   return (
     <div>
         <select onChange={changeLanguage} >
-        <option style={{ color: 'black' }} >Select Language</option>
+        <option style={{ color: 'black' }} >{t("Select Language")}</option>
         <option style={{ color: 'black' }} value="en">English</option>
-        <option style={{ color: 'black' }} value="ar"  >Arabic</option>     
+        <option style={{ color: 'black' }} value="ar"  >{t("Arabic")}</option>     
         </select>
     </div>
   )

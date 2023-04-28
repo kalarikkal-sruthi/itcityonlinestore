@@ -4,9 +4,12 @@ import './Footer.css'
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 function Footer() {
+  const { t, i18n } = useTranslation();
   return (
     <div>
       <div className='footer-icons'>
@@ -17,14 +20,14 @@ function Footer() {
           <Nav.Item>
             <Link to="/">
               <HomeOutlinedIcon variant="Outlined" sx={{ fontSize: '20px' }} />
-              <h6>Home</h6>
+              <h6>{t("Home")}</h6>
             </Link>
           </Nav.Item>
           <Nav.Item>
             <Link to="/search" eventKey="link-1">
 
               <SearchOutlinedIcon variant="Outlined" />
-              <h6>Search</h6>
+              <h6>{t("Search")}</h6>
             </Link>
 
           </Nav.Item>
@@ -32,7 +35,7 @@ function Footer() {
             <Link to="/categories">
 
               <AppsOutlinedIcon variant="Outlined" />
-              <h6>Categories</h6>
+              <h6>{t("Categories")}</h6>
 
             </Link>
           </Nav.Item>
@@ -40,14 +43,14 @@ function Footer() {
             <Link to="/cartpage">
 
               <ShoppingCartOutlinedIcon variant="Outlined" />
-              <h6>Cart</h6>
+              <h6>{t("Cart")}</h6>
             </Link>
           </Nav.Item>
           <Nav.Item>
             <Link to="/profile">
 
-              <HomeOutlinedIcon variant="Outlined" />
-              <h6>Profile</h6>
+            <Person2OutlinedIcon variant="outlined"  ></Person2OutlinedIcon>
+              <h6>{t("Profile")}</h6>
             </Link>
           </Nav.Item>
 

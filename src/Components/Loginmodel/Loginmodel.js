@@ -6,9 +6,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../Redux/userSlice';
 import { useNavigate } from 'react-router-dom'
 import { getToken } from '../../Redux/userSlice';
-
+import { useTranslation } from 'react-i18next';
 function Loginmodel() {
-
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const navigate=useNavigate()
   const token = useSelector(getToken);
@@ -61,27 +61,27 @@ function Loginmodel() {
     // </div>
     <>
     
-      <h5 className='cart-modal-title fw-7 fs-15 font-manrope text-center'>Log in or register</h5>
+      <h5 className='cart-modal-title fw-7 fs-15 font-manrope text-center'>{t("Log in or register")}</h5>
       <div className='cart-modal-list grid'>
         <div className='text-capitalize view-cart-btn bg-orange fs-15 font-manrope '>
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Control type="email" name="customer_email" className='rounded-0 my-2'
-              placeholder="Enter your your email" />
+              placeholder={t("Enter your your email")} />
           </Form.Group>
           <Form.Group>
             <Form.Control type="password"   name="password"className='rounded-0 my-2'
-              placeholder="Enter your your password" />
+              placeholder={t("Enter your your password")} />
           </Form.Group>
           <div class="loginbutton">
-            <Button type="submit" class=" w-100 btn btn-primary">Login</Button>
+            <Button type="submit" class=" w-100 btn btn-primary">{t("Login")}</Button>
           </div>
         </Form>
         </div>
       </div>
       <div className="flex flex-column align-center justify-center cart-modal-empty">
-        <h6 className='text-dark fw-4'>Don’t have an account?</h6>
-        <Link to="/register">Create an account</Link>
+        <h6 className='text-dark fw-4'>{t("Don’t have an account?")}</h6>
+        <Link to="/register">{t("Create an account")}</Link>
       </div>
     
     </>

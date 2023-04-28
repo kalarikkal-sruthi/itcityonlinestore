@@ -15,9 +15,9 @@ import { setSidebarfilterOn } from '../../Redux/filterSlice';
 import { getAllCarts, getCartTotal, getCartItemsCount } from '../../Redux/cartSlice';
 import Loginmodel from '../Loginmodel/Loginmodel';
 import Language from '../Langhook/Language';
-
+import CenterFocusWeakIcon from '@mui/icons-material/CenterFocusWeak';
 import Countryselection from '../Countryselection/Countryselection';
-
+import KeyboardVoiceOutlinedIcon from '@mui/icons-material/KeyboardVoiceOutlined';
 
 
 
@@ -110,9 +110,16 @@ function Topbar() {
           <div className='search'>
             <div className="searchBar">
               <input id="searchQueryInput" type="text" placeholder="Search Products,Brands and More" onChange={(e) => { handlesearchterm(e) }} />
-              <Link to={`/search/${searchterm}`}><button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+              <Link to={`/search/${searchterm}`} className='d-flex'>
+             
+                <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                
                 <SearchOutlinedIcon variant="outlined" sx={{ color: "black" }} />
-              </button></Link>
+                
+              </button>
+              <CenterFocusWeakIcon variant="outlined" sx={{ color: "black" }} />
+                <KeyboardVoiceOutlinedIcon variant="outlined" sx={{ color: "black" }} />
+              </Link>
             </div>
           </div>
         </Container>

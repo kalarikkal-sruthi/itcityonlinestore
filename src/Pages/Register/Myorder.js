@@ -5,11 +5,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import shopping_cart from '../../assets/shopping_cart.png'
 import { Link } from 'react-router-dom';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
-import './Cartpage.css'
+
 import Table from 'react-bootstrap/Table';
 import { getCountry } from '../../Redux/countrySlice';
 import { useTranslation } from 'react-i18next';
-function Cartpage() {
+function Myorder() {
 
   const { t, i18n } = useTranslation();
 
@@ -18,28 +18,9 @@ function Cartpage() {
   const [total, setTotal] = useState();
   const country=useSelector(getCountry);
 
-  useEffect(() => {
-    setTotal(
-      carts.reduce(
-        (total, item) =>{
-        return(  total += item.totalPrice)
-        },0)
-    );
-  }, [carts]);
 
 
 
-  if (carts.length === 0) {
-    return (
-      <div className='container my-5'>
-        <div className='empty-cart  d-flex flex-row justify-content-center flex-column align-items-center'>
-          <img src={shopping_cart} alt="" />
-          <span className='empty-font fw-6 fs-15 text-gray'>{t("Your shopping cart is empty.")}</span>
-          <Link to="/" className='shopping-btn bg-orange text-white fw-5'>{t("Go shopping Now")}</Link>
-        </div>
-      </div>
-    )
-  }
 
   return (
 
@@ -69,31 +50,10 @@ function Cartpage() {
             }
           </>
         </Col>
-        <Col xs={12} md={12} sm={12} lg={4}>
-          <h4 className=' text-start py-2'>{t("Summary")}</h4>
-          <Table className='px-5 cartpagetable' responsive>
-            <tbody>
-              <tr >
-                <td className=' text-start py-2'>{t("Sub-total")} </td>
-                <td className=' text-end py-2' >{total}{country}</td>
-              </tr>
-              <tr>
-              <td className=' text-start py-2'>{t("Est. total")} </td>
-               
-              <td className=' text-end py-2' >{total}{country}</td>
-               
-              </tr>
-              <tr>
-                <div className=' py-4'>
-                  <Link to="/payment"><Button  style={{background:"#f5831a"}} className='border-0 w-100'>{t("Proceed To Buy")}</Button> </Link>
-                </div>
-              </tr>
-            </tbody>
-          </Table>
-        </Col>
+       
       </Row>
     </div>
   )
 }
 
-export default Cartpage
+export default Myorder

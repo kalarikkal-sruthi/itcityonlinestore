@@ -1,8 +1,10 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 
 function Dashboard() {
+  const { t, i18n } = useTranslation();
   return (
-    <div>Dashboard</div>
+    <div>{t("Dashboard")}</div>
   )
 }
 

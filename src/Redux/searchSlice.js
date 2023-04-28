@@ -6,8 +6,8 @@ const initialState={
 }
 export const fetchAsychsearch= createAsyncThunk(
     'home/fetchAsychsearch',
-    async (searchterm) => {
-      const response = await APIClient.get(`/searchProductOrBrandOrCategory?cur=KWD&value=${searchterm}`);
+    async ({searchterm,cur}) => {
+      const response = await APIClient.get(`/searchProductOrBrandOrCategory?cur=${cur}&value=${searchterm}`);
       const data = await response.data.data.data;
       return data;
     }

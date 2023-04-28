@@ -10,9 +10,9 @@ import { fetchAsynchometravel} from '../../Redux/homeSlice';
 import { getHometravel } from '../../Redux/homeSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
-
-import { getCountry } from '../../Redux/countrySlice';
 import { useTranslation } from 'react-i18next';
+import { getCountry } from '../../Redux/countrySlice';
+
 function Categorytravel() {
   const { t, i18n } = useTranslation();
     const dispatch=useDispatch();

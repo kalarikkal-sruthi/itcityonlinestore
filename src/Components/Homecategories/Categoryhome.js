@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { fetchAsynchome, fetchAsynchomehome } from '../../Redux/homeSlice';
+import { fetchAsynchomehome } from '../../Redux/homeSlice';
 import { gethomehome } from '../../Redux/homeSlice';
 import {  useDispatch,useSelector } from 'react-redux';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
@@ -21,7 +21,7 @@ function Categoryhome() {
   
     useEffect(() => {
        
-        dispatch(fetchAsynchome(country))
+        dispatch(fetchAsynchomehome(country))
   
     }, [country])
 

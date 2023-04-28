@@ -7,10 +7,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
 import { getCountry } from '../../Redux/countrySlice';
-
+import { useTranslation } from 'react-i18next';
 
 
 function Payment() {
+  const { t, i18n } = useTranslation();
   const country=useSelector(getCountry);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { carts } = useSelector((state) => state.cart)
@@ -115,71 +116,63 @@ const [total, setTotal] = useState();
     <div>
       <Row className='mx-2 my-5 p-0' >
         <Col className='text-start' xs={12} md={12} sm={12} lg={4}>
-          <h4 className='fw-bold mb-4'>Shipping Address</h4>
+          <h4 className='fw-bold mb-4'>{t("Shipping Address")}</h4>
           <Form className='text-start'>
+            
+            
             <FloatingLabel
               controlId="floatingInput"
-              label="Customer Name"
-              className="mb-3  required" 
+              label={t("Customer Name")}
+              className="mb-3  required" >
 
-            >
-            <Form.Control type="text"     id="customer_name"
+            <Form.Control type="text"     
+                   id="customer_name"
                     onChange={handle}
-                    name="customer_name" placeholder="Customer Name" />
+                    name="customer_name" 
+                    placeholder={t("Customer Name")} />
             </FloatingLabel>
+
+
             <FloatingLabel
               controlId="floatingInput"
-              label="Email Address"
+              label={t("Email Address")}
               className="mb-3  required"
             >
-              <Form.Control type="email"           
+            <Form.Control type="email"           
                     id="customer_name"
                     onChange={handle}
                     name="customer_name"  
-                    placeholder="name@example.com" />
+                    placeholder={t("name@example.com")} />
             </FloatingLabel>
+
+
             <FloatingLabel
               controlId="floatingInput"
-              label="Mobile number"
+              label={t("Mobile number")}
               className="mb-3  required"
             >
               <Form.Control type="number" 
                 id="customer_mobile"
                 onChange={handle}
                 name="customer_mobile"
-              
-              
-              placeholder="Mobile number" />
+              placeholder={t("Mobile number")} />
             </FloatingLabel>
-
-            {/* <FloatingLabel controlId="floatingTextarea2" label="Comments">
-              <Form.Control
-                as="textarea"
-                id="customer_address"
-                onChange={handle}
-                name="customer_address"
-
-                className="mb-3  required"
-                placeholder="Leave a comment here"
-                style={{ height: '100px' }}
-              />
-            </FloatingLabel> */}
 
 
             <FloatingLabel
               controlId="floatingInput"
-              label="Place / Area"
+              label={t("Place / Area")}
               className="mb-3  required"
             >
               <Form.Control type="text" 
                 id="customer_pincode"
                 onChange={handle}
                 name="customer_pincode"
-              
-              
-              
-              placeholder="Place / Area" />
+              placeholder={t("Place / Area")} />
             </FloatingLabel>
+
+
+
             
             <FloatingLabel controlId="loatingInput" label="Country">
               <Form.Control
@@ -187,10 +180,8 @@ const [total, setTotal] = useState();
                 id="country"
                 onChange={handle}
                 name="country"
-
                 className="mb-3  required"
-                placeholder="Country"
-             
+                placeholder={t("Country")}            
               />
             </FloatingLabel>
 
@@ -202,7 +193,7 @@ const [total, setTotal] = useState();
                 id="remarks"
                 onChange={handle}
                 name="remark"
-                placeholder="Remarks"
+                placeholder={t("Remarks")}
                 className="mb-3  required"
                 style={{ height: '100px' }}
               />
@@ -215,60 +206,62 @@ const [total, setTotal] = useState();
 
 
         <Col className='text-start' xs={12} md={12} sm={12} lg={3}>
-          <h4 className='fw-bold mb-3'>Payment Method</h4>
+          <h4 className='fw-bold mb-3'>{t("Payment Method")}</h4>
           <Form className='text-start border border-dark p-3'>
     
-            <Form.Check type="radio"   name="delivery" label="Cash on Delivery"  checked/>
-            <Form.Check type="radio"  name="delivery" label="Pay on Delivery ( Pay cash or KNET, or credit card right at your doorstep! )" />
-            <h4 className='fw-bold my-3'>Checkout Options</h4>
+            <Form.Check type="radio"   name="delivery" label={t("Cash on Delivery")}  checked/>
+            <Form.Check type="radio"  name="delivery" label={t("Pay on Delivery ( Pay cash or KNET, or credit card right at your doorstep! )")} />
+            <h4 className='fw-bold my-3'>{t("Checkout Options")}</h4>
             <Form.Check 
             
             type="checkbox"
             checked={secondchecked}
             onChange={handleChangesecond}
             
-            label="Guest Checkout" />
+            label={t("Guest Checkout")} />
             <Form.Check type="checkbox" 
             
           
             checked={checked}
             onChange={handleChange}
-            label="Create an account for later use" />
+            label={t("Create an account for later use")} />
             {checked && <div>
               <Form>
               <FloatingLabel
               controlId="floatingInput"
-              label="Password"
+              label={t("Password")}
               className="mb-3  required" >
             <Form.Control type="password"  
 
                     id="password"
                     onChange={handle}
-                    name="Password" placeholder="Password" />
+                    name="Password"
+                     placeholder={t("Password")} />
             </FloatingLabel>
 
 
             <FloatingLabel
               controlId="floatingInput"
-              label="Confirm Password"
+              label={t("Confirm Password")}
               className="mb-3  required" >
             <Form.Control type="password"   
 
                     id="password"
                     onChange={handle}
-                    name="Password" placeholder="Confirm Password" />
+                    name="Password" 
+                    placeholder={t("Confirm Password")} />
             </FloatingLabel>
               </Form>
               
               </div>}
 <Link to="/">
             <Button style={{background:"#f5831a",borderColor:"#f5831a"}} className="border-0 me-2 mt-2 " variant="primary" type="submit">
-              Continue Shopping
+              {t("Continue Shopping")}
             </Button></Link>
             <Button className="border-0 bg-dark me-2 mt-2 " onClick={completeshopping} variant="primary" type="submit" >
-              Complete Shopping
+              {t("Complete Shopping")}
             </Button>
-            {isSubmitted && <p>Thank you for submitting the form!</p>}
+            {isSubmitted && <p>{t("Thank you for submitting the form!")}</p>}
           </Form>
 
         </Col>
@@ -277,14 +270,14 @@ const [total, setTotal] = useState();
 
 
         <Col className='text-start' xs={12} md={12} sm={12} lg={5}>
-          <h4 className='fw-bold my-3'>Order Summary</h4>
+          <h4 className='fw-bold my-3'>{t("Order Summary")}</h4>
           <Table responsive>
             <thead>
               <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Amount</th>
+                <th>{t("Image")}</th>
+                <th>{t("Name")}</th>
+                <th>{t("Quantity")}</th>
+                <th>{t("Amount")}</th>
               </tr>
             </thead>
             <tbody>
@@ -314,8 +307,8 @@ return(
               
             </tbody>
           </Table>
-          <h5 className='text-start'>Shipping Charge:Nil</h5>
-          <h5 className='text-start'>Total Price:{total}{country}</h5>
+          <h5 className='text-start'>{t("Shipping Charge")}:{t("Nil")}</h5>
+          <h5 className='text-start'>{t("Total Price")}:{total}{country}</h5>
         </Col>
       </Row>
     </div>
