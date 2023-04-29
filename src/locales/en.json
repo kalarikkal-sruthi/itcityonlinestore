@@ -19,7 +19,7 @@
     "Bahrain":"Bahrain",
     "Oman":"Oman",
     "Philippines":"Philippines",
-    "UAE":"UAE",
+    
     "Home Page":"Home Page",
     "Search":"Search",
     "Categories":"Categories",
@@ -46,11 +46,11 @@
     "Customer Name":"Customer Name",
     "Email Address":"Email Address",
     "Mobile number":"Mobile number",
-    "Place / Area":"Place / Area",
+    
     "Address":"Address",
     "Country":"Country",
     "Remarks (optional)":"Remarks (optional)",
-    "Payment Method":"Payment Method",
+    
     "Cash on Delivery":"Cash on Delivery",
     "Pay on Delivery (Pay cash or KNET, or credit card right at your doorstep! )":"Pay on Delivery (Pay cash or KNET, or credit card right at your doorstep! )",
     "Checkout Options":"Checkout Options",
@@ -65,9 +65,65 @@
     "Name":"Name",
     "Shipping Charge":"Shipping Charge",
     "Total Price:":"Total Price:",
-    "Your Order has being placed successfully. Move on to shop more from ITCITY Online store.":"Your Order has being placed successfully. Move on to shop more from ITCITY Online store."
+    "Your Order has being placed successfully. Move on to shop more from ITCITY Online store.":"Your Order has being placed successfully. Move on to shop more from ITCITY Online store.",
    
+
+
+    "Computers":"Computers",
+    "Mobiles":"Mobiles",
+    "Tablets":"Tablets",
+    "Watches & Perfumes":"Watches & Perfumes",
+    "Travel Bags":"Travel Bags",
+    "Cameras & Drones":"Cameras & Drones",
+
+    "Watches & Perfume":"Watches & Perfume",
+
+    "Personal Care Collections":"Personal Care Collections",
+    "Gaming Collections":"Gaming Collections",
+    "KUWAIT":"KUWAIT",
+    "SAUDI ARABIA":"SAUDI ARABIA",
+
+
+    "QATAR":"QATAR",
+    "BAHRAIN":"BAHRAIN",
+    "OMAN":"OMAN",
+    "PHILIPPINES":"PHILIPPINES",
+    "UAE":"UAE",
+
+    "Min Price":"Min Price",
+
+    "Max Price":"Max Price",
+    "Home":"Home",
+    "Home page ":"Home page ",
+    "Profile":"Profile",
     
+  "Log in or register":"Log in or register",
+    "Unable to login. Please try after some time":"Unable to login. Please try after some time",
+    "Login":"Login",
+    "Don’t have an account?":"Watches & Perfumes",
+    "Create an account":"Create an account",
+    "Enter your email":"Enter your email",
+
+    "Enter your password":"Enter your password",
+
+    "Register":"Register",
+    "Enter your name":"Enter your name",
+    "Log Out":"Log Out",
+   
+
+
+    "Place / Area":"Place / Area",
+    "Remarks":"Remarks",
+    "Payment Method":"Payment Method",
+    "Pay on Delivery ( Pay cash or KNET, or credit card right at your doorstep! )":"Pay on Delivery ( Pay cash or KNET, or credit card right at your doorstep! )",
+    "Password":"Password",
+
+    "Nil":"Nil",
+
+    "Total Price":"Total Price",
+    "Quantity":"Quantity",
+    "Amount ":"Amount "
+   
 
 
 }

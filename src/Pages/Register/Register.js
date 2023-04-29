@@ -19,12 +19,12 @@ export function Register() {
   return (
 
     <>
-      <Container>
-        <Row className=" my-4">
-        <Col xs={12} md={6} sm={6} lg={6}>
+      <Container >
+        <Row className="  mt-3 col-sm-mt-0">
+        <Col xs={12} md={6} sm={6} lg={6} className='my-5 '>
             <Loginmodel />
             </Col>
-            <Col xs={12} md={6} sm={6} lg={6}>
+            <Col xs={12} md={6} sm={6} lg={6} className='my-5 '>
             <h5 className='cart-modal-title fw-7 fs-15 font-manrope text-center'>{t("Register")}</h5>
             <form onSubmit={handleSubmit}>
               <Form.Group>

@@ -66,7 +66,65 @@
     "Name":"اسم",
     "Shipping Charge":"رسوم الشحن",
     "Total Price:":"السعر الكلي",
-    "Your Order has being placed successfully. Move on to shop more from ITCITY Online store.":"تم تقديم طلبك بنجاح. انتقل للتسوق أكثر من متجر ITCITY عبر الإنترنت"
+    "Your Order has being placed successfully. Move on to shop more from ITCITY Online store.":"تم تقديم طلبك بنجاح. انتقل للتسوق أكثر من متجر ITCITY عبر الإنترنت",
+
+
+
+
+    "Computers":"أجهزة الكمبيوتر",
+    "Mobiles":"جوالات",
+    "Tablets":"أجهزة لوحية",
+    "Watches & Perfumes":"الساعات والعطور",
+    "Travel Bags":"حقائب سفر",
+    "Cameras & Drones":"الكاميرات والطائرات بدون طيار",
+
+    "Watches & Perfume":"الساعات والعطور",
+
+    "Personal Care Collections":"مجموعات العناية الشخصية",
+    "Gaming Collections":"مجموعات العناية الشخصية",
+    "KUWAIT":"KUWAIT",
+    "SAUDI ARABIA":"المملكة العربية السعودية",
+
+
+    "QATAR":"دولة قطر",
+    "BAHRAIN":"البحرين",
+    "OMAN":"سلطنة عمان",
+    "PHILIPPINES":"فيلبيني",
+    
+
+    "Min Price":"سعر دقيقة",
+
+    "Max Price":"أقصى سعر",
+    "Home":"بيت",
+    "Home page ":"الصفحة الرئيسيةHome page ",
+    "Profile":"حساب تعريفي",
+    
+  "Log in or register":"تسجيل الدخول أو التسجيل",
+    "Unable to login. Please try after some time":"غير قادر على تسجيل الدخول. يرجى المحاولة بعد مرور بعض الوقت.",
+    "Login":"تسجيل الدخول",
+    "Don’t have an account?":"ليس لديك حساب؟",
+    "Create an account":"إنشاء حساب",
+    "Enter your email":"أدخل بريدك الإلكتروني",
+
+    "Enter your password":"ادخل رقمك السري",
+
+    "Register":"يسجل",
+    "Enter your name":"أدخل أسمك",
+    "Log Out":"تسجيل خروج",
+   
+
+
+   
+    "Remarks":"ملاحظات",
+    
+    "Pay on Delivery ( Pay cash or KNET, or credit card right at your doorstep! )":"الدفع عند الاستلام (ادفع نقدًا أو KNET أو ببطاقة ائتمان عند عتبة داركم!)",
+    "Password":"كلمة المرور",
+
+    "Nil":"لا شيءNil",
+
+    "Total Price":"السعر الكلي",
+    "Quantity":"كمية",
+    "Amount ":"كمية"
 
 
 

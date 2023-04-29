@@ -40,4 +40,9 @@
 .slick-next:before {
   color: #ef7f1a !important;
 }
+.slick-slide img{
+  width: 100%;
+  display: block;
+
+}
 

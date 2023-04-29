@@ -64,14 +64,14 @@ function Productsinglepage() {
                
                 <Col xs={12} md={6} sm={6} lg={6} className="productsingle">
                   <h3>{value.product_name}</h3>
-                  <h5>{value.product_price_offer.toFixed(3)}{country}</h5>
-                  <h5 style={{ MarginBottom: '4px', textDecoration: "line-through", fontSize: '14px' }}>{value.product_price.toFixed(3)}</h5>
+                  <h5>{value.product_price_offer.toFixed(3)} {country}</h5>
+                  <h5 style={{ MarginBottom: '4px', textDecoration: "line-through", fontSize: '14px' }}>{value.product_price.toFixed(3)} {country}</h5>
                   <div className='qty-change d-flex align-center '>
                     <h5>{t("Quantity")}:</h5>
                     <button type="button" className='qty qty-decrease flex align-center justify-center' onClick={decreaseQty} >
                       <RemoveOutlinedIcon variant="outlined" />
                     </button>
-                    <div className=" qty-value flex align-center justify-center px-2 fw-bold">{product_qty}</div>
+                    <div className=" qty-value flex align-center justify-center px-2 fw-bold">{product_qty} </div>
                     <button onClick={increaseQty} type="button" className='qty qty-increase flex align-center justify-center'  >
                       <AddOutlinedIcon variant="outlined" />
                     </button>

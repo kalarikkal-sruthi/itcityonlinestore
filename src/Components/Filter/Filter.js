@@ -70,7 +70,7 @@ function Filter() {
         }
         <hr></hr>
         <div className='filter'>
-          <h5 className="fw-bold mb-0" onClick={() => { setExpandedtwo(!expandedtwo) }}>{t("Brand")}</h5>
+          <h5 className="fw-bold mb-0" onClick={() => { setExpandedtwo(!expandedtwo) }}>{t("Brands")}</h5>
           <Button style={{ backgroundColor: "white", color: '#f5831a;' }} className=" border-0" onClick={() => { setExpandedtwo(!expandedtwo) }}>
 
             {!expandedtwo ? <RemoveOutlinedIcon sx={{ color: "#f5831a;" }} variant="outline" /> : <AddOutlinedIcon sx={{ color: "#f5831a;" }} variant="outlined" />

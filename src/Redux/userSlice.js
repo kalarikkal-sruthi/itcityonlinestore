@@ -65,8 +65,8 @@ const userSlice = createSlice({
       const response = await APIClient.post('/login', { customer_email, password },config);
       const token = response.data.token;
       const user=response.data.user
-     
       localStorage.setItem('token',token)
+      localStorage.setItem('user', JSON.stringify(token))
       localStorage.setItem('token',user)
       localStorage.setItem('user', JSON.stringify(user))
 

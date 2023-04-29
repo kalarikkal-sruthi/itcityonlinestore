@@ -15,6 +15,8 @@ import { getCountry } from '../../Redux/countrySlice';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
 import { useTranslation } from 'react-i18next';
 import priceFilter from '../../Redux/priceFilter';
+import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 const itemsPerPage = 32;
 function Productbycategory(products) {
     const { t, i18n } = useTranslation();
@@ -187,8 +189,8 @@ function Productbycategory(products) {
 
                         {/* <Productlist products={innercategories}  /> */}
                         <div className="paginationclass ">
-        <button onClick={handlePrevPage}>Previous</button>
-        <button onClick={handleNextPage}>Next</button>
+        <button onClick={handlePrevPage}><KeyboardDoubleArrowLeftIcon /> Previous</button>
+        <button onClick={handleNextPage}>Next <KeyboardDoubleArrowRightIcon /></button>
       </div>
                   </Col>
                   

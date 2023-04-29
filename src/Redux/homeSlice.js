@@ -123,6 +123,16 @@ const homeSlice = createSlice({
      extraReducers:(builder) => {
         builder
        
+
+
+        .addCase(fetchAsynchome.fulfilled, (state, action) => {
+          state.homeslider = action.payload;
+        })
+        .addCase(fetchAsynchome.rejected, () => {
+          console.log('rejected');
+        })
+
+
         .addCase(fetchAsynchomeaccessories.fulfilled, (state, action) => {
           state.homeaccessories = action.payload;
         })

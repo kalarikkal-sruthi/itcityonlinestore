@@ -18,7 +18,7 @@ import Language from '../Langhook/Language';
 import CenterFocusWeakIcon from '@mui/icons-material/CenterFocusWeak';
 import Countryselection from '../Countryselection/Countryselection';
 import KeyboardVoiceOutlinedIcon from '@mui/icons-material/KeyboardVoiceOutlined';
-
+import { useTranslation } from 'react-i18next';
 
 
 function Topbar() {
@@ -32,8 +32,10 @@ function Topbar() {
   // const itemsCount = useSelector(getCartItemsCount);
   console.log('itemsCount' + itemsCount);
   const [searchterm, setsearchTerm] = useState('')
-
-
+  const myItem =JSON.parse(localStorage.getItem('cart')) || ''
+  const objLength = Object.keys(myItem).length;
+  console.log('myItem',objLength);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     dispatch(fetchAsyncategories(getcategoriesNav));
@@ -92,9 +94,11 @@ function Topbar() {
 
 
               <div className='navbar-cart flex align-center'>
-                <Link to="/cartpage" className='cart-btn'>
+                <Link to="/cart" className='cart-btn'>
                   <ShoppingCartOutlinedIcon sx={{ color: '#fff', margin: '2px' }} variant="outlined" />
-                  <div className='cart-items-value'>{carts.length}</div>
+                  {objLength ? (  <div className='cart-items-value'>{objLength}</div>):
+                  (  <div className='cart-items-value'>0</div>)}
+                  
                 </Link>
               </div>
 
@@ -109,7 +113,7 @@ function Topbar() {
         <Container>
           <div className='search'>
             <div className="searchBar">
-              <input id="searchQueryInput" type="text" placeholder="Search Products,Brands and More" onChange={(e) => { handlesearchterm(e) }} />
+              <input id="searchQueryInput" type="text" placeholder={t("Search Products,Brands and More")} onChange={(e) => { handlesearchterm(e) }} />
               <Link to={`/search/${searchterm}`} className='d-flex'>
              
                 <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">

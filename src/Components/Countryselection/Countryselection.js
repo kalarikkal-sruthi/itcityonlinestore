@@ -17,12 +17,12 @@ function Countryselection() {
 
  <select onChange={onselectedvalue} >
         <option style={{ color: 'black' }}  value="KWD">{t("KUWAIT")}</option>
-        <option style={{ color: 'black' }}   value="SAR">SAUDI ARABIA</option>
-        <option style={{ color: 'black' }}  value="QAR">QATAR</option>
-        <option style={{ color: 'black' }}   value="BHD">BAHRAIN</option>
-        <option style={{ color: 'black' }}  value="OMR">OMAN</option>
-        <option style={{ color: 'black' }}  value="PHP">PHILIPPINES</option> 
-        <option style={{ color: 'black' }}  value="AED">UAE</option>
+        <option style={{ color: 'black' }}   value="SAR">{t("SAUDI ARABIA")}</option>
+        <option style={{ color: 'black' }}  value="QAR">{t("QATAR")}</option>
+        <option style={{ color: 'black' }}   value="BHD">{t("BAHRAIN")}</option>
+        <option style={{ color: 'black' }}  value="OMR">{t("OMAN")}</option>
+        <option style={{ color: 'black' }}  value="PHP">{t("PHILIPPINES")}</option> 
+        <option style={{ color: 'black' }}  value="AED">{t("UAE")}</option>
  </select>
 
 

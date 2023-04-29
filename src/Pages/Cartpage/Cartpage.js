@@ -14,10 +14,9 @@ function Cartpage() {
   const { t, i18n } = useTranslation();
 
   const dispatch = useDispatch()
+  const [total, setTotal] = useState(0);
   const { carts } = useSelector((state) => state.cart)
-  const [total, setTotal] = useState();
   const country=useSelector(getCountry);
-
   useEffect(() => {
     setTotal(
       carts.reduce(
@@ -25,7 +24,10 @@ function Cartpage() {
         return(  total += item.totalPrice)
         },0)
     );
-  }, [carts]);
+
+  }, [carts,total]);
+
+  console.log(total.toFixed(2));
 
 
 
@@ -51,14 +53,14 @@ function Cartpage() {
               carts?.map((value, index) => {
                 return (
                   <div key={index}>
-                    <div className='cartpage d-flex'>
+                    <div className='cartpage'>
                       <div className='cartpageimg'>
                         <img alt="itcity" src={thumbimgURL + value?.product_image} style={{ width: '150px' }} />
                       </div>
                       <div className='cartpagecontent text-start'>
                         <h5 className='mt-4' style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '0.5rem'}}>{value?.product_name}</h5>  
-                        <h5>{t("Quantity")}:{value.product_qty}{country}</h5>
-                        <h5>{t("Total Price")}:{value.totalPrice}{country}</h5>
+                        <h5>{t("Quantity")}:{value.product_qty}</h5>
+                        <h5>{t("Total Price")}:{value?.totalPrice.toFixed(3)} {country}</h5>
                         <Button className=' bg-dark border-0 ' onClick={() => dispatch(removeFromCart(value?.id))}>{t("Remove")}</Button>
 
                       </div>
@@ -74,18 +76,18 @@ function Cartpage() {
           <Table className='px-5 cartpagetable' responsive>
             <tbody>
               <tr >
-                <td className=' text-start py-2'>{t("Sub-total")} </td>
-                <td className=' text-end py-2' >{total}{country}</td>
+                <td className=' text-start py-2'>{t("Sub-total")}</td>
+                <td className=' text-end py-2' >{total.toFixed(2)} {country}</td>
               </tr>
               <tr>
-              <td className=' text-start py-2'>{t("Est. total")} </td>
+              <td className=' text-start py-2'>{t("Est. total")}</td>
                
-              <td className=' text-end py-2' >{total}{country}</td>
+              <td className=' text-end py-2' >{total.toFixed(2)} {country}</td>
                
               </tr>
               <tr>
                 <div className=' py-4'>
-                  <Link to="/payment"><Button  style={{background:"#f5831a"}} className='border-0 w-100'>{t("Proceed To Buy")}</Button> </Link>
+                  <Link to="/payment"><Button  style={{background:"#f5831a"}} className='border-0'>{t("Proceed To Buy")}</Button> </Link>
                 </div>
               </tr>
             </tbody>

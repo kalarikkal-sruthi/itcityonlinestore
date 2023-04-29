@@ -13,9 +13,10 @@ import Categories from './Components/Homecategory/Homecategory';
 import Payment from './Pages/Payment/Payment';
 import { Register } from './Pages/Register/Register';
 import Account from './Pages/Register/Account';
-import Footercategoris from './Components/Footercategoris/Footercategoris';
+import Footercategory from './Components/Homecategory/Footercategory';
 import Profile from './Pages/Register/Profile';
 import Mywhishlist from './Pages/Register/Mywhishlist';
+
 
 
 
@@ -39,7 +40,7 @@ function App() {
       <Route path='/search/:searchterm' element={<Searchpage/>} />
       </Routes>
       <Routes>
-      <Route path='/cartpage' element={<Cartpage/>}></Route>
+      <Route path='/cart' element={<Cartpage/>}></Route>
       </Routes>
       <Routes>
       <Route path='/register' element={<Register/>}></Route>    
@@ -48,10 +49,10 @@ function App() {
       <Route path='/search' element={<Searchpage/>}></Route>  
       </Routes>
       <Routes>
-        <Route path='/categories' element={<Footercategoris/>}></Route>
+        <Route path='/cat-footer' element={<Footercategory />}></Route>
       </Routes>
       <Routes>
-        <Route path='/profile' element={<Profile />} ></Route>   
+        <Route path='/profile' element={<Account  />} ></Route>   
       </Routes>
       <Routes>
         <Route path='/payment' element={<Payment/>}></Route>          

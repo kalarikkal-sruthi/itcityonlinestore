@@ -20,7 +20,14 @@
 .empty-font {
     color: #858687;
 }
-
+.cartpage{
+  display: flex;  
+}
+@media only screen and (max-width: 600px) {
+    .cartpage{
+        display: block;
+    }
+  }
 .cartpagetable {
 
     padding: 10px;

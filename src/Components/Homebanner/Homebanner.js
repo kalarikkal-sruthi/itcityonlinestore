@@ -48,8 +48,8 @@ function Banner() {
         <>
             <div>
                 <Slider {...settings}>
-                {/* <div className='banner' > */}
-                                <h3>
+             
+                                {/* <h3>
                                    <img src="/homeslider/accessories.jpg" alt="itcity" ></img>
                                 </h3>
                                 <h3>
@@ -57,9 +57,9 @@ function Banner() {
                                 </h3>
                                 <h3>
                                    <img src="/homeslider/1663088379.jpg" ></img>
-                                </h3>
-                   {/* </div> */}
-                    {/* {sliders?.map((item,index) => {
+                                </h3> */}
+              
+                    {homeslider?.map((item,index) => {
                         return (
                           <div className='banner' key={index}>
                                 <h3>
@@ -67,7 +67,7 @@ function Banner() {
                                 </h3>
                             </div>
                         )
-                    })} */}
+                    })}
                     </Slider>
             </div>
 

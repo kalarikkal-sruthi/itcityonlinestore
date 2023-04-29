@@ -1,5 +1,6 @@
 import React from 'react'
 import './Loginmodel.css'
+import { useEffect } from 'react';
 import {Form,Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,12 +8,23 @@ import { login } from '../../Redux/userSlice';
 import { useNavigate } from 'react-router-dom'
 import { getToken } from '../../Redux/userSlice';
 import { useTranslation } from 'react-i18next';
+import Cartmessage from '../Cartmessage/Cartmessage';
+import { getCartMessageStatus,setCartMessageOff,setCartMessageOn } from '../../Redux/cartSlice';
 function Loginmodel() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const navigate=useNavigate()
   const token = useSelector(getToken);
   // const error = useSelector((state) => state.auth.error);
+  const cartmessage = useSelector(getCartMessageStatus)
+
+useEffect(() => {
+    if(cartmessage){
+  setTimeout(() => {
+    dispatch(setCartMessageOff())
+  }, 2000);
+}},[])
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,14 +32,14 @@ function Loginmodel() {
     const password = event.target.password.value;
     try {
     dispatch(login({ customer_email: customer_email, password:password }));
-   
-    if (!token) {
-      alert('Unable to login. Please try after some time.');
-      return;
-    }
+    // if (!token) {
+    //   alert('Unable to login. Please try after some time.');
+    //   return;
+    // }
+    // dispatch(setCartMessageOn(true))
     setTimeout(() => {
     navigate('/');
-    }, 500);
+    }, 2000);
     } 
     catch (error) {
       console.error(error);
@@ -78,11 +90,12 @@ function Loginmodel() {
           </div>
         </Form>
         </div>
+        {cartmessage && <Cartmessage />}
       </div>
-      <div className="flex flex-column align-center justify-center cart-modal-empty">
+      {/* <div className="flex flex-column align-center justify-center cart-modal-empty">
         <h6 className='text-dark fw-4'>{t("Don’t have an account?")}</h6>
         <Link to="/register">{t("Create an account")}</Link>
-      </div>
+      </div> */}
     
     </>
   )

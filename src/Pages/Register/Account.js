@@ -16,6 +16,7 @@ import Table from 'react-bootstrap/Table';
 import Editprofile from './Editprofile';
 import Myorder from './Myorder';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 
@@ -24,6 +25,7 @@ function Account() {
   const navigate=useNavigate()
   const dispatch=useDispatch()
     const userToken = useSelector(selectToken);
+    console.log(userToken);
     useEffect(() => {
       dispatch(loginSuccess(userToken));
     }, []);
@@ -33,7 +35,20 @@ function Account() {
     localStorage.removeItem('token');
     navigate('/')}
 
-    console.log(userToken);
+
+
+    if (!userToken) {
+      return (
+        <div className='container my-5'>
+          <div className='empty-cart  d-flex flex-row justify-content-center flex-column align-items-center'>
+            {/* <img src={shopping_cart} alt="" /> */}
+            <span className='empty-font fw-6 fs-15 text-gray'>{t("You Don’t have an account?.")}</span>
+            <Link to="/login" className='shopping-btn bg-orange text-white fw-5'>{t("Feel Free To Create One")}</Link>
+          </div>
+        </div>
+      )
+    }
+    
     // const keys = Object.keys(userUser);
     // const val = Object.entries(userUser).map((element)=> element[1].customer_name)
   

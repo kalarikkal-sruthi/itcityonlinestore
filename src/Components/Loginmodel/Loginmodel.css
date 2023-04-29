@@ -34,7 +34,7 @@
 	top: -13px;
 }
 .cart-modal-title {
-	color: rgba(0, 0, 0, 0.6);
+	/* color: rgba(0, 0, 0, 0.6); */
 	margin-bottom: 12px;
 }
 .cart-modal-list .cart-modal-item {

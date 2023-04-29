@@ -12,7 +12,7 @@ function Footer() {
   const { t, i18n } = useTranslation();
   return (
     <div>
-      <div className='footer-icons'>
+      <div className='footer-icons mt-5'>
         <Nav className="footer-icons-link"
           activeKey="/home"
           onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
@@ -32,7 +32,7 @@ function Footer() {
 
           </Nav.Item>
           <Nav.Item>
-            <Link to="/categories">
+            <Link to="/cat-footer">
 
               <AppsOutlinedIcon variant="Outlined" />
               <h6>{t("Categories")}</h6>
@@ -40,14 +40,14 @@ function Footer() {
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to="/cartpage">
+            <Link to="/cart">
 
               <ShoppingCartOutlinedIcon variant="Outlined" />
               <h6>{t("Cart")}</h6>
             </Link>
           </Nav.Item>
           <Nav.Item>
-            <Link to="/profile">
+            <Link to="/account">
 
             <Person2OutlinedIcon variant="outlined"  ></Person2OutlinedIcon>
               <h6>{t("Profile")}</h6>

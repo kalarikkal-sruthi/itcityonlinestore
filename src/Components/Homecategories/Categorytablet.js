@@ -54,8 +54,11 @@ function Categorytablet() {
       
     </div>
     <div className='bannerimage'>
-        <img src="/homeslider/accessories.jpg" alt=""></img>
-    </div>
+                <img src="/homeslider/accessories.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/mobile.jpeg" alt=""></img>
+            </div>
 </div>
   )
 }
