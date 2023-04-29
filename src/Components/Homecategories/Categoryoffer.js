@@ -49,10 +49,10 @@ function Categoryoffer() {
       
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/offerlap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/offermobile1.jpg" alt=""></img>
             </div>
 </div>
   )

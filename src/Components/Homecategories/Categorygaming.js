@@ -50,10 +50,10 @@ function Categorygaming() {
    
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/gamehome.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/gamemobile.jpeg" alt=""></img>
             </div>
 </div>
   )

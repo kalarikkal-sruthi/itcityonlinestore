@@ -2,29 +2,29 @@ import React, { useState,useEffect } from 'react'
 import './Homecategorybyproduct.css'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { fetchAsynchomepersonalcare } from '../../Redux/homeSlice';
+import { fetchAsynchomepersonalcare} from '../../Redux/homeSlice';
 import { getHomepersonalcare } from '../../Redux/homeSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
 import { getCountry } from '../../Redux/countrySlice';
 import { useTranslation } from 'react-i18next';
-function Personalcare() {
+
+
+function Categorywatches() {
   const { t, i18n } = useTranslation();
     const dispatch=useDispatch();
     const country=useSelector(getCountry)
-    console.log("country",country);
-
     useEffect(() => {
      dispatch(fetchAsynchomepersonalcare(country))
     }, [country])
-    
+    const homepersonal=useSelector(getHomepersonalcare)
+    console.log('homepersonal',homepersonal);
 
-    const homepersonalcare=useSelector(getHomepersonalcare)
-    console.log('homepersonalcare',homepersonalcare);
-
+   
   return (
     <div>
     <div className='bestdeals'>
@@ -39,7 +39,7 @@ function Personalcare() {
     </div>
     <div className='content'>
    
-          {homepersonalcare.map((value,index)=>{
+          {homepersonal.map((value,index)=>{
           return(
             <Link style={{ textDecoration: "none",color:"black" }} to={`/product/${value.product_id}`} >
           <div className='newdesign' >
@@ -55,13 +55,13 @@ function Personalcare() {
    
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/perfumeandwatcheslap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/perfumeandwatchesmobile.jpg" alt=""></img>
             </div>
 </div>
   )
 }
 
-export default Personalcare
+export default Categorywatches

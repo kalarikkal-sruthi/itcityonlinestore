@@ -47,9 +47,9 @@ function Categories() {
           </div>
         </div>
       </div>
-      <div className='bannerimage'>
+      {/* <div className='bannerimage'>
         <img src="/homeslider/accessories.jpg" alt="itcity"></img>
-      </div>
+      </div> */}
     </>
   )
 }

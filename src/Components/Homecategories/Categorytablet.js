@@ -54,10 +54,10 @@ function Categorytablet() {
       
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/tabletslap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/tabletsmobile.jpg" alt=""></img>
             </div>
 </div>
   )

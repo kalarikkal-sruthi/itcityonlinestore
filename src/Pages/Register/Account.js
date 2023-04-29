@@ -54,20 +54,15 @@ function Account() {
   
   return (
     <div>
-         <button
-            onClick={onLogOut}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-          >
-            {t("Log Out")}
-          </button>
+      
 
-<Container>
+<Container className='my-5'>
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
         <Col sm={3}>
           <Nav variant="pills" className="flex-column">
-            <Nav.Item>
-              <Nav.Link eventKey="first">Profile</Nav.Link>
+            <Nav.Item style={{backgroundColor:"f5831a"}} >
+              <Nav.Link eventKey="first" >Profile</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="second">Edit Profile</Nav.Link>
@@ -116,6 +111,14 @@ function Account() {
         </Col>
       </Row>
     </Tab.Container>
+
+
+          <button
+            onClick={onLogOut}
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            {t("Log Out")}
+          </button>
     </Container>
     </div>
   )

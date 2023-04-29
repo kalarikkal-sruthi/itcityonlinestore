@@ -53,10 +53,10 @@ function Categorymobile() {
         
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/mobilelap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/mobiledevice.jpg" alt=""></img>
             </div>
 </div></div>
   )

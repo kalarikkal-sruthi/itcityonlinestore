@@ -56,10 +56,10 @@ function Categorycomputer() {
               
             </div>
             <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/computerlap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/computermobile.jpg" alt=""></img>
             </div>
         </div>
   )

@@ -28,3 +28,30 @@
 .footer-icons .nav-item {
    text-align: center;
 }
+.footer-div{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 600px) {
+    .desktopview {
+      display: none;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .mobilediv{
+      display: none;
+    }
+}
+.footer-div ul li{
+    list-style-type: none;
+}
+.footer-div ul h5{
+    color: #f5831a;}
+.bottom-footer{
+    text-align: center;
+}
+.bottom-footer h6{
+    color: #777;
+}

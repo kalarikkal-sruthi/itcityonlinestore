@@ -72,7 +72,7 @@ export const fetchAsynchometravel = createAsyncThunk(
 export const fetchAsynchomepersonalcare = createAsyncThunk(
   'home/fetchAsynchomepersonalcare',
   async (cur) => {
-    const response = await APIClient.get(`/findlimtProductbyCategoryid?cur${cur}&category_id=139`);
+    const response = await APIClient.get(`/findlimtProductbyCategoryid?cur=${cur}&category_id=133`);
     const data = await response.data.data;
     return data;
   }

@@ -55,10 +55,10 @@ function Categorytravel() {
     
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/travelbagslap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/travelbagsmobile.jpg" alt=""></img>
             </div>
 </div>
   )

@@ -83,7 +83,7 @@ function Categoryaccessories() {
                 <img src="/homeslider/accessories.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/accessoriesmobile.jpg" alt=""></img>
             </div>
         </div>
     )

@@ -32,10 +32,10 @@ useEffect(() => {
     const password = event.target.password.value;
     try {
     dispatch(login({ customer_email: customer_email, password:password }));
-    // if (!token) {
-    //   alert('Unable to login. Please try after some time.');
-    //   return;
-    // }
+    if (!token) {
+      alert('Unable to login. Please try after some time.');
+      return;
+    }
     // dispatch(setCartMessageOn(true))
     setTimeout(() => {
     navigate('/');
@@ -79,18 +79,18 @@ useEffect(() => {
         <Form onSubmit={handleSubmit}>
           <Form.Group>
             <Form.Control type="email" name="customer_email" className='rounded-0 my-2'
-              placeholder={t("Enter your your email")} />
+              placeholder={t("Enter your email")} />
           </Form.Group>
           <Form.Group>
             <Form.Control type="password"   name="password"className='rounded-0 my-2'
-              placeholder={t("Enter your your password")} />
+              placeholder={t("Enter your  password")} />
           </Form.Group>
           <div class="loginbutton">
             <Button type="submit" class=" w-100 btn btn-primary">{t("Login")}</Button>
           </div>
         </Form>
         </div>
-        {cartmessage && <Cartmessage />}
+        {cartmessage && <Loginmodel />}
       </div>
       {/* <div className="flex flex-column align-center justify-center cart-modal-empty">
         <h6 className='text-dark fw-4'>{t("Don’t have an account?")}</h6>

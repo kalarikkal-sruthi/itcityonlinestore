@@ -51,10 +51,10 @@ function Categorycameras() {
    
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/camerlap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/cameramobile.jpg" alt=""></img>
             </div>
 </div>
   )

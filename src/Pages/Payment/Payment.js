@@ -168,7 +168,7 @@ const [total, setTotal] = useState(0);
     <div>
       <Row className='mx-2 my-5 p-0' >
         <Col className='text-start' xs={12} md={12} sm={12} lg={4}>
-          <h3 className='fw-bold mb-4'>{t("Shipping Address")}</h3>
+          <h4 className='fw-bold mb-4'>{t("Shipping Address")}</h4>
           
           
           
@@ -263,7 +263,7 @@ const [total, setTotal] = useState(0);
 
 
         <Col className='text-start' xs={12} md={12} sm={12} lg={3}>
-          <h3 className='fw-bold mb-3'>{t("Payment Method")}</h3>
+          <h4 className='fw-bold mb-3'>{t("Payment Method")}</h4>
           <Form className='text-start border border-dark p-3'>
     
             <Form.Check type="radio"   name="delivery" label={t("Cash on Delivery")}  checked/>
@@ -327,7 +327,7 @@ const [total, setTotal] = useState(0);
 
 
         <Col className='text-start' xs={12} md={12} sm={12} lg={5}>
-          <h3 className='fw-bold my-3'>{t("Order Summary")}</h3>
+          <h4 className='fw-bold '>{t("Order Summary")}</h4>
           <Table responsive>
             <thead>
               <tr>

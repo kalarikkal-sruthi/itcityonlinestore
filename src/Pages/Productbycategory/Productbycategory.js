@@ -94,7 +94,7 @@ function Productbycategory(products) {
                                 <Navbar.Collapse id="navbarScroll">
                                     <Nav
                                         className="me-auto my-2 my-lg-0 "
-                                        style={{ maxHeight: '100px' }}
+                                        // style={{ maxHeight: '100px' }}
                                         navbarScroll>
                                             
                                         <Filter />
@@ -128,7 +128,7 @@ function Productbycategory(products) {
              return(
              
                     
-                <Link style={{ textDecoration: "none" }} to={`/product/${product.product_id}`} >
+        <Link style={{ textDecoration: "none" }} to={`/product/${product.product_id}`} >
         <div className='newdesign' style={{width:'220px'}}>
           <img src={thumbimgURL + product?.product_image} alt="" />
           <p style={{ fontWeight: ' 600', fontSize: '14px', marginBottom: '0.5rem' }}>{product?.product_name}</p>
@@ -148,8 +148,8 @@ function Productbycategory(products) {
              return(
            
                     
-                <Link style={{ textDecoration: "none",color:"black" }} to={`/product/${product.product_id}`} >
-        <div className='newdesign' style={{width:'235px'}}>
+        <Link style={{ textDecoration: "none",color:"black" }} to={`/product/${product.product_id}`} >
+        <div className='newdesign innerproduct'>
           <img src={thumbimgURL + product?.product_image} alt="" />
           <p style={{ fontWeight: ' 600', fontSize: '14px', marginBottom: '0.5rem' }}>{product?.product_name}</p>
           <p style={{ fontSize: '18px', marginBottom: "4px", color: "#f5831a" }} className="  ">{product?.product_price_offer.toFixed(3)}{country}</p>

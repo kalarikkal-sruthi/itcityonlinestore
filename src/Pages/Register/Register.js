@@ -4,15 +4,23 @@ import { Form, Button, Col, Row, Container } from 'react-bootstrap'
 import { registration } from '../../Redux/userSlice';
 import Loginmodel from '../../Components/Loginmodel/Loginmodel';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 export function Register() {
+ 
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [name, setCustomername] = useState('');
   const [email, setCustomeremail] = useState('');
   const [password, setPassword] = useState('');
+  const  navigate=useNavigate()
   const handleSubmit = (e) => {
+   
     e.preventDefault();
     dispatch(registration({ name, email, password }));
+    setTimeout(() => {
+      navigate('/');
+      }, 2000);
+    
     console.log({ name, email, password });
   };
 

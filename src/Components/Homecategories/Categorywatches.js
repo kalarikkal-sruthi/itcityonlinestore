@@ -55,10 +55,10 @@ function Categorywatches() {
    
     </div>
     <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
+                <img src="/homeslider/perfumeandwatcheslap.jpg" alt=""></img>
             </div>
             <div className='bannerimagemobile'>
-                <img src="/homeslider/mobile.jpeg" alt=""></img>
+                <img src="/homeslider/perfumeandwatchesmobile.jpg" alt=""></img>
             </div>
 </div>
   )

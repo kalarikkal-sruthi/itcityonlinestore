@@ -122,3 +122,29 @@ background-color: #f5831a;
 border-color: #f5831a;
 color: white;
 }
+.innerproduct{
+    width:235px;
+
+}
+.innerproduct img{
+    width: 160px;
+    margin: auto;
+
+}
+@media only screen and (max-width: 600px) {
+    .innerproduct img{
+        width: 90px;
+        margin: auto;
+    
+    }
+ }
+@media only screen and (max-width: 600px) {
+     .newdesign .innerproduct img {
+        width:90px;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .innerproduct{
+        width:150px;
+    }
+  }

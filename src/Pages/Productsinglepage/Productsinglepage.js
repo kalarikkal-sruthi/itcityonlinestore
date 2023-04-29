@@ -63,7 +63,7 @@ function Productsinglepage() {
                 <Col xs={12} md={6} sm={6} lg={6}><img alt="itcity" src={thumbimgURL + value.product_image}></img></Col>
                
                 <Col xs={12} md={6} sm={6} lg={6} className="productsingle">
-                  <h3>{value.product_name}</h3>
+                  <h4>{value.product_name}</h4>
                   <h5>{value.product_price_offer.toFixed(3)} {country}</h5>
                   <h5 style={{ MarginBottom: '4px', textDecoration: "line-through", fontSize: '14px' }}>{value.product_price.toFixed(3)} {country}</h5>
                   <div className='qty-change d-flex align-center '>
