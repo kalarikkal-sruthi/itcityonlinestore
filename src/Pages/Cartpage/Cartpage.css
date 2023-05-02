@@ -34,3 +34,10 @@
     text-align: initial;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
+.cartsummary{
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #f5831a;
+    margin: 10px 0px;
+}

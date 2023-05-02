@@ -2,6 +2,7 @@ import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import { APIClient } from "../Utils/Api/Api";
 const initialState={
     searchterm:[],
+    loading: false,
 
 }
 export const fetchAsychsearch= createAsyncThunk(
@@ -22,9 +23,11 @@ const searchSlice= createSlice({
       builder
       .addCase(fetchAsychsearch.fulfilled, (state, action) => {
         state.searchterm = action.payload;
+        state.loading = false;
       })
-      .addCase(fetchAsychsearch.rejected, () => {
+      .addCase(fetchAsychsearch.rejected, (state, action) => {
         console.log('rejected');
+        state.loading = true;
       })
     }
 })

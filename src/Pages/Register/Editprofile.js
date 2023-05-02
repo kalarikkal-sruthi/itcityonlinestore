@@ -1,9 +1,14 @@
 import React from 'react'
 import { Col, Row, Form, Button, FloatingLabel, Table } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next';
-
+import { getUser } from '../../Redux/userSlice';
+import { useSelector } from 'react-redux';
 function Editprofile() {
     const { t, i18n } = useTranslation();
+    const Userdetails = useSelector(getUser)
+
+    const userdata=Userdetails.user
+    console.log(userdata);
   return (
     <div>
    <Form className='text-start mb-5'>

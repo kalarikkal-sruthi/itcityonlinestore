@@ -8,6 +8,7 @@ import { APIClient } from "../Utils/Api/Api";
 
 const initialState={
     singleproduct:[],
+    loading: false,
 
 
     
@@ -20,9 +21,11 @@ const productSlice = createSlice({
            builder
            .addCase(fetchAsyncproducts.fulfilled, (state, action) => {
             state.singleproduct = action.payload;
+            state.loading = false;
           }) 
-          .addCase(fetchAsyncproducts.pending, () => {
+          .addCase(fetchAsyncproducts.pending, (state, action) => {
             console.log("rejected");
+            state.loading = true;
           }) 
           
      

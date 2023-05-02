@@ -16,16 +16,28 @@ import Account from './Pages/Register/Account';
 import Footercategory from './Components/Homecategory/Footercategory';
 import Profile from './Pages/Register/Profile';
 import Mywhishlist from './Pages/Register/Mywhishlist';
+import Guestnav from './Components/Navbar/Guestnav';
+import { getToken } from './Redux/userSlice';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import Myorder from './Pages/Register/Myorder';
 
 
 
 
 function App() {
 
+const userToken = useSelector(getToken)
+useEffect(() => {
+  if (!userToken) {
+    <Navbar  />
+  }
+}, []);
+
   return (
     <div className="App">
       <Sidebar/>
-      <Navbar />
+      {userToken ? ( <Guestnav />):(  <Navbar  />)}
       <Routes>
       <Route path='/' element={<Homepage />} />
       </Routes>
@@ -52,8 +64,11 @@ function App() {
         <Route path='/cat-footer' element={<Footercategory />}></Route>
       </Routes>
       <Routes>
-        <Route path='/profile' element={<Account  />} ></Route>   
+        <Route path='/profile' element={<Profile />} ></Route>  </Routes> 
+        <Routes>
+        <Route path='/myorder' element={<Myorder />} ></Route>   
       </Routes>
+      
       <Routes>
         <Route path='/payment' element={<Payment/>}></Route>          
       </Routes>

@@ -50,7 +50,7 @@ return(
             }
           }}
         />
-        {value.brands_name}
+         {value.brands_name}
       </label>
       {/* <input type="checkbox" />
       <label for="vehicle1" style={{ marginBottom: '2px', marginLeft: "4px" }}>{value.brands_name}</label> */}

@@ -51,9 +51,11 @@ export const fetchAsyncgetAllProductByColor = createAsyncThunk(
 const initialState = {
   categoriesnav: [],
   innerproducts: [],
+  
   subcategory:[],
   brand:[],
-  color:[]
+  color:[],
+  loading: false,
 }
 const categorynavSlice = createSlice({
   name: "categoriesnav",
@@ -68,9 +70,12 @@ const categorynavSlice = createSlice({
       console.log('Rejected')
   })
   .addCase(fetchAsyncinnerproducts.fulfilled, (state, action) => {
+    state.loading = false;
+
     state.innerproducts = action.payload;
 })
-  .addCase(fetchAsyncinnerproducts.rejected, () => {
+  .addCase(fetchAsyncinnerproducts.rejected, (state, action) => {
+    state.loading = true;
     console.log('Rejected')
 })
 

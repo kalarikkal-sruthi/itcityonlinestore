@@ -57,8 +57,8 @@ function Cartpage() {
                       <div className='cartpageimg'>
                         <img alt="itcity" src={thumbimgURL + value?.product_image} style={{ width: '150px' }} />
                       </div>
-                      <div className='cartpagecontent text-start'>
-                        <h5 className='mt-4' style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '0.5rem'}}>{value?.product_name}</h5>  
+                      <div className='cartpagecontent text-start my-3'>
+                        <h5 className='mt-2' style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: '0.5rem'}}>{value?.product_name}</h5>  
                         <h5>{t("Quantity")}:{value.product_qty}</h5>
                         <h5>{t("Total Price")}:{value?.totalPrice.toFixed(3)} {country}</h5>
                         <Button className=' bg-dark border-0 ' onClick={() => dispatch(removeFromCart(value?.id))}>{t("Remove")}</Button>
@@ -71,8 +71,8 @@ function Cartpage() {
             }
           </>
         </Col>
-        <Col xs={12} md={12} sm={12} lg={4}>
-          <h4 className=' text-start py-2'>{t("Summary")}</h4>
+        <Col xs={12} md={12} sm={12} lg={4} className='cart'>
+          <h4 className='cartsummary text-start py-2'>{t("Summary")}</h4>
           <Table className='px-5 cartpagetable' responsive>
             <tbody>
               <tr >

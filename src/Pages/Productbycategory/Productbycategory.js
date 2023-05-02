@@ -17,6 +17,7 @@ import { useTranslation } from 'react-i18next';
 import priceFilter from '../../Redux/priceFilter';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import {ScaleLoader} from "react-spinners";
 const itemsPerPage = 32;
 function Productbycategory(products) {
     const { t, i18n } = useTranslation();
@@ -38,6 +39,8 @@ function Productbycategory(products) {
 
 
     const innercategories = useSelector(getinnerProducts);
+    const loading = useSelector((state) => state.categoriesnav.loading);
+    console.log('loading',loading);
     console.log('innercategories', innercategories);
 
     const maxPage = Math.ceil(innercategories.length / itemsPerPage);
@@ -68,12 +71,22 @@ function Productbycategory(products) {
         }
       };
 
+// pagination
+      const styles = {
+        container: {
+          display: 'flex',
+          justifyContent: 'center',
+          padding:'250px 0px 0px 0px', 
+          // alignItems: 'center',
+          height: '450vh',
+        },
+      };
     return (
         <div>
             <Container fluid>
                 <Row >
                     <Col xs={12} sm={12} md={12} lg={3} >
-                        <Navbar expand="lg" style={{ Padding: '0px' }}>
+                        <Navbar expand="lg" style={{ Padding: '0px',height:'2500px;' }}>
                             <Container fluid >
                                 <Navbar.Brand className='brand-logo' chref="#" >
                                     <div className='brand-and-toggler'>
@@ -121,7 +134,29 @@ function Productbycategory(products) {
                        <div className={`sidebar-overlay ${isOpen == true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
                     </Col>
                     
+                               
                     <Col xs={12} sm={12} md={12} lg={9}  className='d-flex flex-wrap justify-content-center'>
+                    
+                  
+                    {
+
+loading ?
+(
+  <div style={styles.container}>
+{/* PropagateLoader */}
+    <ScaleLoader 
+color="#f5831a"
+loading={true}
+
+/>
+  
+ 
+</div>
+
+)
+:(
+  <>      
+                    
                     {filteredProducts.length > 0 ? (
         <div style={{display:"flex",flexWrap:"wrap"}}  >
            {filteredProducts.map((product,index)=>{
@@ -192,7 +227,16 @@ function Productbycategory(products) {
         <button onClick={handlePrevPage}><KeyboardDoubleArrowLeftIcon /> Previous</button>
         <button onClick={handleNextPage}>Next <KeyboardDoubleArrowRightIcon /></button>
       </div>
-                  </Col>
+      </>    
+                )
+              }
+                </Col>
+
+
+
+
+                 
+             
                   
                 </Row>
             </Container>

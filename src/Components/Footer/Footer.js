@@ -63,8 +63,8 @@ function Footer() {
 
 
       <div className='footer-div desktopview pt-3'>
-    <Row>
-        <Col lg={3} sm={3} md={3}>
+    <Row className=" p-0 m-0">
+        <Col lg={3} sm={3} md={3} className=" p-0 m-0">
             <ul>
             <img src="/homeslider/main-logo-footer.png" alt=""></img>
                 <li>info@itcityonlinestore.com</li>
@@ -77,8 +77,8 @@ function Footer() {
         </Col>
    
 
-    <Col lg={3} sm={3} md={3}> 
-        <div className="col">
+    <Col lg={3} sm={3} md={3} className="p-0 m-0"> 
+      
             
             <ul>
             <h5>Information</h5>
@@ -86,10 +86,10 @@ function Footer() {
                 <li>Privacy Policy</li>
                 <li>Terms&Condition</li>
             </ul>
-        </div>
+        
     </Col>
 
-    <Col lg={3} sm={3} md={3}> 
+    <Col lg={3} sm={3} md={3} className="p-0 m-0"> 
         
             <ul>
                 <h5>Categories</h5>
@@ -108,7 +108,7 @@ function Footer() {
         
     </Col>
 
-<Col lg={3} sm={3} md={3}>
+<Col lg={3} sm={3} md={3} className="p-0 m-0">
     <ul>
         <h5>Service</h5>
         <li>Wish List</li>

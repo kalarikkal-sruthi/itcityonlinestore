@@ -34,8 +34,11 @@
 	top: -13px;
 }
 .cart-modal-title {
-	color: #f5831a;
-	margin-bottom: 12px;
+	font-size: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #f5831a;
+    margin: 30px 0px;
 }
 .cart-modal-list .cart-modal-item {
 	grid-template-columns: 64px auto 65px;
@@ -59,11 +62,18 @@
 .cart-modal .view-cart-btn {
 	display: inline-block;
 	width: 300px;
-	padding: 5px 1rem;
-	margin-top: 1.8rem;
+	padding: 5px;
+	margin-top: 2px;
 	margin-left: auto;
 	border-radius: 2px;
 	text-align: start;
+}
+.cart-modal h3{
+	font-size: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #f5831a;
+    margin: 10px 0px;
 }
 .loginbutton .btn {
 	width: 100%;
@@ -74,4 +84,13 @@
 	width: 100%;
 	background: #333;
 	border: none;
+}
+.guestmodal{
+	color: black;
+	margin-bottom: 10px;
+}
+button.guestmodal{
+	background-color: black;
+	color: white;
+	margin: 20px 0px;
 }

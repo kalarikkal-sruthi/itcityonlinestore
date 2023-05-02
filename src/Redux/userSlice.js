@@ -2,6 +2,19 @@ import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
 import { APIClient } from '../Utils/Api/Api';
 import { createSelector } from 'reselect';
 
+const fetchFromLocalStorage = () => {
+  let cart = localStorage.getItem('cart');
+  if(cart){
+      return JSON.parse(localStorage.getItem('cart'));
+  } else {
+      return [];
+  }
+}
+
+const storeInLocalStorage = (token,user) => {
+  localStorage.setItem('user', JSON.stringify(token));
+  localStorage.setItem('user', JSON.stringify(user))
+}
 
 
 const userSlice = createSlice({
@@ -13,7 +26,12 @@ const userSlice = createSlice({
 
     },
     reducers: {
-       
+      clearUser: (state) => {
+        state.token = "";
+        state.user = [];
+        storeInLocalStorage(state.token);
+        storeInLocalStorage(state.user);
+    },
     
     },
     extraReducers:(builder)=>{
@@ -64,13 +82,16 @@ const userSlice = createSlice({
           }
       const response = await APIClient.post('/login', { customer_email, password },config);
       const token = response.data.token;
-      const user=response.data.user
+      console.log('token',token);
       localStorage.setItem('token',token)
-      localStorage.setItem('user', JSON.stringify(token))
-      localStorage.setItem('token',user)
+      localStorage.setItem('token', JSON.stringify(token))
+      const user=response.data.user
+  
+ 
+      localStorage.setItem('user',user)
       localStorage.setItem('user', JSON.stringify(user))
 
-      return { token,user};
+      return {token,user};
     } catch (error) {
       throw new Error(error.response.data.message);
     }
@@ -90,7 +111,7 @@ export const selectToken = createSelector(
     selectUser,
     user => user.token
   );
-export const {loginuser,}=userSlice.actions
+export const {loginuser,clearUser}=userSlice.actions
 export const getToken=(state)=>state.user.token;
 export const getUser=(state)=>state.user.user;
 export default userSlice.reducer;

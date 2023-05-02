@@ -19,9 +19,11 @@ import CenterFocusWeakIcon from '@mui/icons-material/CenterFocusWeak';
 import Countryselection from '../Countryselection/Countryselection';
 import KeyboardVoiceOutlinedIcon from '@mui/icons-material/KeyboardVoiceOutlined';
 import { useTranslation } from 'react-i18next';
+import Guestmodel from '../Loginmodel/Guestmodel';
+import { getUser } from '../../Redux/userSlice';
 
 
-function Topbar() {
+function Guestnav() {
   const dispatch = useDispatch()
   const categories = useSelector(getcategoriesNav);
   console.log('categoriesnav', categories);
@@ -36,6 +38,7 @@ function Topbar() {
   const objLength = Object.keys(myItem).length;
   console.log('myItem',objLength);
   const { t, i18n } = useTranslation();
+  const Userdetails=useSelector(getUser)
 
   useEffect(() => {
     dispatch(fetchAsyncategories(getcategoriesNav));
@@ -86,11 +89,11 @@ function Topbar() {
 
             <div className='d-flex'>
               <div className='cart-btn'>
-              <Link to="/login" className='cart-btn'>
+                
                 <Person2OutlinedIcon sx={{ color: '#fff', margin: '2px' }} variant="outlined"  ></Person2OutlinedIcon>
-               </Link>
+             
                 <div className='cart-items-value'></div>
-                {/* <Loginmodel /> */}
+               <Guestmodel />
               </div>
 
 
@@ -143,4 +146,4 @@ function Topbar() {
   )
 }
 
-export default Topbar
+export default Guestnav

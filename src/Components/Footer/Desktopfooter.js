@@ -3,8 +3,8 @@ import React from 'react'
 function Desktopfooter() {
   return (
     <div className='footer-div'>
-    <div className="row">
-        <div className="col">
+    <div className="row p-0 m-0" >
+        <div className="col p-0 m-0">
             <ul>
                 <h3>Itcity logo here</h3>
                 <li>info@itcityonlinestore.com</li>
@@ -15,10 +15,10 @@ function Desktopfooter() {
                 ezzanine floor. Farwaniah, Kuwait</li>
             </ul>
         </div>
-    </div>
+    
 
-    <div className="row">
-        <div className="col">
+    
+        <div className="col p-0 m-0">
             
             <ul>
             <h3>Information</h3>
@@ -27,10 +27,10 @@ function Desktopfooter() {
                 <li>Terms&Condition</li>
             </ul>
         </div>
-    </div>
+   
 
-    <div className="row">
-        <div className="col">
+    
+        <div className="col p-0 m-0">
             <ul>
                 <h3>Categories</h3>
                 <li>Accessories</li>
@@ -46,9 +46,9 @@ function Desktopfooter() {
                 <li>Gaming</li>
             </ul>
         </div>
-    </div>
-<div className="row">
-<div className="col">
+    
+
+<div className="col  p-0 m-0">
     <ul>
         <h3>Service</h3>
         <li>Wish List</li>
@@ -57,10 +57,9 @@ function Desktopfooter() {
         <li>About Us</li>
     </ul>
 </div>
+
+
 </div>
-
-
-
 </div>
   )
 }

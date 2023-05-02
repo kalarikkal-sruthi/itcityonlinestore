@@ -6,9 +6,9 @@ import { Container } from 'react-bootstrap';
 function Footercategory() {
     const { t, i18n } = useTranslation();
   return (
-    <Container className='mb-5'>
-       <h3 className='text-center my-3'>{t("Categories")}</h3>
-    <div className='category-main  mt-5'>
+    <Container className='mb-5 footerclass'>
+       <h3 className='text-center'>{t("Categories")}</h3>
+    <div className='category-main  '>
     
       <div className='categories flex-wrap justify-content-center;'>
       

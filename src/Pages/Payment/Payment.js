@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
-import { Col, Row, Form, Button, FloatingLabel, Table } from 'react-bootstrap'
+import { Col, Row, Form, Button, FloatingLabel, Table,Container } from 'react-bootstrap'
 import { APIClient } from '../../Utils/Api/Api';
-
+import './Payment.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { thumbimgURL } from '../../Utils/Api/Imageapi';
@@ -166,8 +166,9 @@ const [total, setTotal] = useState(0);
 
   return (
     <div>
-      <Row className='mx-2 my-5 p-0' >
-        <Col className='text-start' xs={12} md={12} sm={12} lg={4}>
+      <div className='payment'>
+      <Row className='mx-2  p-0' >
+        <Col className='text-start p-2' xs={12} md={12} sm={12} lg={4} >
           <h4 className='fw-bold mb-4'>{t("Shipping Address")}</h4>
           
           
@@ -262,9 +263,9 @@ const [total, setTotal] = useState(0);
 
 
 
-        <Col className='text-start' xs={12} md={12} sm={12} lg={3}>
-          <h4 className='fw-bold mb-3'>{t("Payment Method")}</h4>
-          <Form className='text-start border border-dark p-3'>
+        <Col className='text-start p-2' xs={12} md={12} sm={12} lg={3}>
+          <h4 className='fw-bold mb-4'>{t("Payment Method")}</h4>
+          <Form className='text-start border border p-3'>
     
             <Form.Check type="radio"   name="delivery" label={t("Cash on Delivery")}  checked/>
             <Form.Check type="radio"  name="delivery" label={t("Pay on Delivery ( Pay cash or KNET, or credit card right at your doorstep! )")} />
@@ -323,11 +324,12 @@ const [total, setTotal] = useState(0);
 
         </Col>
 
+        {/* <Col className='text-start' xs={12} md={12} sm={12} lg={1}>
+          </Col> */}
 
 
-
-        <Col className='text-start' xs={12} md={12} sm={12} lg={5}>
-          <h4 className='fw-bold '>{t("Order Summary")}</h4>
+        <Col className='text-start p-2' xs={12} md={12} sm={12} lg={5}>
+          <h4 className='fw-bold mb-4'>{t("Order Summary")}</h4>
           <Table responsive>
             <thead>
               <tr>
@@ -368,6 +370,7 @@ return(
           <h5 className='text-start'>{t("Total Price")}:{total.toFixed(2)} {country}</h5>
         </Col>
       </Row>
+      </div>
       {cartmessage && <Cartmessage />}
     </div>
   )

@@ -4,14 +4,14 @@ import { useEffect } from 'react';
 import {Form,Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '../../Redux/userSlice';
+import { clearUser, login } from '../../Redux/userSlice';
 import { useNavigate } from 'react-router-dom'
 import { getToken } from '../../Redux/userSlice';
 import { useTranslation } from 'react-i18next';
 import Cartmessage from '../Cartmessage/Cartmessage';
-import { getCartMessageStatus,setCartMessageOff,setCartMessageOn } from '../../Redux/cartSlice';
+import { clearCart, getCartMessageStatus,setCartMessageOff,setCartMessageOn } from '../../Redux/cartSlice';
 import Loginmessage from '../Cartmessage/Loginmessage';
-function Loginmodel() {
+function Guestmodel() {
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const navigate=useNavigate()
@@ -42,39 +42,46 @@ useEffect(() => {
     navigate('/');
     }, 200);
 
+
     } 
     catch (error) {
       console.error(error);
     }
   };
-  return ( 
+  const onLogOut=()=>{
+  dispatch(clearUser())
+  dispatch(clearCart())
+    localStorage.removeItem('token');
+    
+    navigate('/')
+    window.location.reload(); }
+
+  return (
     <>
-      <h5 className='cart-modal-title fw-7 fs-15 font-manrope text-center'>{t("Log in or register")}</h5>
+    <div className='cart-modal'>
+      <h3>Login Details</h3>
       <div className='cart-modal-list grid'>
         <div className='text-capitalize view-cart-btn bg-orange fs-15 font-manrope '>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Control type="email" name="customer_email" className='rounded-0 my-2'
-              placeholder={t("Enter your email")} />
-          </Form.Group>
-          <Form.Group>
-            <Form.Control type="password"   name="password"className='rounded-0 my-2'
-              placeholder={t("Enter your  password")} />
-          </Form.Group>
-          <div class="loginbutton">
-            <Button type="submit" class=" w-100 btn btn-primary">{t("Login")}</Button>
-          </div>
-        </Form>
+            <Link to="/profile" className='guestmodal mb-2' style={{ textDecoration: "none",Color:"black" }}>Profile</Link>
+            <br></br>
+            <Link to="/myorder"  className='guestmodal mb-2' style={{ textDecoration: "none",Color:"black" }}>Myorder</Link>
+            <br></br>
+            <Link to=""   style={{ textDecoration: "none",Color:"black" }}><button className='guestmodal mb-2'
+            onClick={onLogOut} 
+           
+          >
+            {t("Log Out")}
+          </button></Link>
+      
         </div>
-        {cartmessage && <Loginmessage />}
       </div>
-      {/* <div className="flex flex-column align-center justify-center cart-modal-empty">
-        <h6 className='text-dark fw-4'>{t("Don’t have an account?")}</h6>
-        <Link to="/register">{t("Create an account")}</Link>
-      </div> */}
-    
+      
+    </div>
     </>
+    
+ 
+
   )
 }
 
-export default Loginmodel
+export default Guestmodel

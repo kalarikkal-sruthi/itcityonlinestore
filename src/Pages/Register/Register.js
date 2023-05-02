@@ -5,6 +5,7 @@ import { registration } from '../../Redux/userSlice';
 import Loginmodel from '../../Components/Loginmodel/Loginmodel';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import './Register.css'
 export function Register() {
  
   const { t, i18n } = useTranslation();
@@ -18,9 +19,12 @@ export function Register() {
     e.preventDefault();
     dispatch(registration({ name, email, password }));
     setTimeout(() => {
-      navigate('/');
+      navigate('/login');
       }, 2000);
-    
+
+    setCustomername('')
+    setCustomeremail('')
+    setPassword('')
     console.log({ name, email, password });
   };
 
@@ -28,11 +32,11 @@ export function Register() {
 
     <>
       <Container >
-        <Row className="  mt-3 col-sm-mt-0">
-        <Col xs={12} md={6} sm={6} lg={6} className='my-5 '>
+        <Row className="registration">
+        <Col xs={12} md={6} sm={6} lg={6} className=''>
             <Loginmodel />
             </Col>
-            <Col xs={12} md={6} sm={6} lg={6} className='my-5 '>
+            <Col xs={12} md={6} sm={6} lg={6} className=' registerform '>
             <h5 className='cart-modal-title fw-7 fs-15 font-manrope text-center'>{t("Register")}</h5>
             <form onSubmit={handleSubmit}>
               <Form.Group>

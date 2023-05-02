@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import React from 'react'
-import { getUser } from '../../Redux/userSlice'
+import { clearUser, getUser } from '../../Redux/userSlice'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux';
 
@@ -17,6 +17,7 @@ import Editprofile from './Editprofile';
 import Myorder from './Myorder';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { clearCart } from '../../Redux/cartSlice';
 
 
 
@@ -26,14 +27,22 @@ function Account() {
   const dispatch=useDispatch()
     const userToken = useSelector(selectToken);
     console.log(userToken);
-    useEffect(() => {
-      dispatch(loginSuccess(userToken));
-    }, []);
+
+    const Userdetails = useSelector(getUser)
+
+    const userdata=Userdetails.user
+    console.log(userdata);
+    // useEffect(() => {
+    //   dispatch(loginSuccess(userToken));
+    // }, []);
     
     
     const onLogOut=()=>{
+    dispatch(clearUser())
     localStorage.removeItem('token');
-    navigate('/')}
+    dispatch(clearCart())
+    navigate('/')
+    window.location.reload(); }
 
 
 
@@ -56,24 +65,24 @@ function Account() {
     <div>
       
 
-<Container className='my-5'>
+<Container className='account my-5'>
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
         <Col sm={3}>
           <Nav variant="pills" className="flex-column">
-            <Nav.Item style={{backgroundColor:"f5831a"}} >
-              <Nav.Link eventKey="first" >Profile</Nav.Link>
+            <Nav.Item >
+              <Nav.Link eventKey="first" style={{backgroundColor:"f5831a"}}  >Profile</Nav.Link>
             </Nav.Item>
+            {/* <Nav.Item>
+              <Nav.Link eventKey="second" style={{backgroundColor:"f5831a"}} >Edit Profile</Nav.Link>
+            </Nav.Item> */}
             <Nav.Item>
-              <Nav.Link eventKey="second">Edit Profile</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="third">My Order</Nav.Link>
+              <Nav.Link eventKey="third" style={{backgroundColor:"f5831a"}}>My Order</Nav.Link>
             </Nav.Item>
           
           </Nav>
         </Col>
-        <Col sm={9}>
+        <Col sm={9} className='my-3'>
           <Tab.Content>
             <Tab.Pane eventKey="first">
             <Table striped bordered hover>
@@ -84,7 +93,10 @@ function Account() {
         </tr>
       </thead>
       <tbody>
-        <tr><td>Name:</td></tr>
+        <tr><td>Name:</td>
+        
+        <td>{userdata.customer_name}</td>
+        </tr>
         <tr><td>Mobile Number:</td></tr>
         <tr><td>Place/Area:</td></tr>
         <tr><td>Block Number:</td></tr>
@@ -98,12 +110,12 @@ function Account() {
       </tbody>
     </Table>    
             </Tab.Pane>
-            <Tab.Pane eventKey="second">
+            {/* <Tab.Pane eventKey="second">
             
 
 <Editprofile/>
 
-            </Tab.Pane>
+            </Tab.Pane> */}
             <Tab.Pane eventKey="third">
          <Myorder />
             </Tab.Pane>
@@ -115,7 +127,7 @@ function Account() {
 
           <button
             onClick={onLogOut}
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+            className='guestmodal mb-5'
           >
             {t("Log Out")}
           </button>
