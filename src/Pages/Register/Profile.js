@@ -1,13 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { getUser } from '../../Redux/userSlice'
 import { Container,Col,Row,Table } from 'react-bootstrap'
+import { useEffect } from 'react'
+import { getUserdetails,fetchAsyncuserdetails} from '../../Redux/userSlice';
 
 function Profile() {
   const Userdetails = useSelector(getUser)
-
+  const userdetails=useSelector(getUserdetails)
+  const dispatch = useDispatch()
   const userdata=Userdetails.user
   console.log(userdata);
+  useEffect(() => {
+    dispatch(fetchAsyncuserdetails());
+   
+  }, [dispatch])
+
   return (
     <div>
 

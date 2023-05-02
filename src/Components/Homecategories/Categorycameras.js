@@ -33,6 +33,12 @@ function Categorycameras() {
           <Link to={`/category/${139}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/camerlap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/cameramobile.jpg" alt=""></img>
+            </div>
     <div className='content'>
    
           { homecamera.map((value,index)=>{
@@ -50,12 +56,7 @@ function Categorycameras() {
         })}       
    
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/camerlap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/cameramobile.jpg" alt=""></img>
-            </div>
+ 
 </div>
   )
 }

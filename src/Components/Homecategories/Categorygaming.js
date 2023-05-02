@@ -32,6 +32,12 @@ function Categorygaming() {
           <Link to={`/category/${166}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/gamehome.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/gamemobile.jpeg" alt=""></img>
+            </div>
     <div className='content'>
    
           { homegame.map((value,index)=>{
@@ -49,12 +55,7 @@ function Categorygaming() {
         })}       
    
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/gamehome.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/gamemobile.jpeg" alt=""></img>
-            </div>
+  
 </div>
   )
 }

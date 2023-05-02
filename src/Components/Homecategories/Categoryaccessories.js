@@ -60,6 +60,13 @@ function Categoryaccessories() {
                 <div className='bestdeals-view'>
                   <Link to={`/category/${99}`}><Button >{t("View All")}</Button></Link>
                 </div>
+              
+            </div>
+            <div className='bannerimage'>
+                <img src="/homeslider/accessories.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/accessoriesmobile.jpg" alt=""></img>
             </div>
             <div className='content'>
                 {/* <Slider ref={setSliderRef} {...sliderSettings}> */}
@@ -79,12 +86,7 @@ function Categoryaccessories() {
                     
                 {/* </Slider> */}
             </div>
-            <div className='bannerimage'>
-                <img src="/homeslider/accessories.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/accessoriesmobile.jpg" alt=""></img>
-            </div>
+           
         </div>
     )
 }

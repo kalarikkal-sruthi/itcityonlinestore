@@ -10,7 +10,7 @@ function Footercategory() {
        <h3 className='text-center'>{t("Categories")}</h3>
     <div className='category-main  '>
     
-      <div className='categories flex-wrap justify-content-center;'>
+      <div className='categoriesfooter flex-wrap justify-content-center;'>
       
         <div className='dd '>
           {/* <div className='cat'> */}

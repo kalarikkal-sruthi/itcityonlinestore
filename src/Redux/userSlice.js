@@ -22,6 +22,7 @@ const userSlice = createSlice({
     initialState: {
     token:"",
     user:[],
+    userdetails:[],
 
 
     },
@@ -49,13 +50,24 @@ const userSlice = createSlice({
         .addCase(login.fulfilled, (state, action) => {
           state.token=action.payload;
           state.user = action.payload;
-         
           return state;
-        
         })
         .addCase(login.rejected, (state,action) => {
           console.log('rejected');
         })
+
+
+        .addCase(fetchAsyncuserdetails.fulfilled, (state, action) => {
+          state.userdetails=action.payload;
+         
+        })
+        .addCase(fetchAsyncuserdetails.rejected, (state,action) => {
+          console.log('rejected');
+        })
+
+        
+
+
     }
     
   });
@@ -98,13 +110,15 @@ const userSlice = createSlice({
 });
 
 
-
-  
-  
-  
-  
-  
-  
+export const fetchAsyncuserdetails = createAsyncThunk('name/fetchAsyncuserdetails',
+async ({customer_id}) => {
+try {
+  const response =await APIClient.get(`/getUserbyToken?customer_id=${customer_id}`)
+  const data = await response.data.data;
+  return data;
+} catch (error) {
+  console.log(error);
+}});
 
 const selectUser = state => state.user;
 export const selectToken = createSelector(
@@ -114,4 +128,5 @@ export const selectToken = createSelector(
 export const {loginuser,clearUser}=userSlice.actions
 export const getToken=(state)=>state.user.token;
 export const getUser=(state)=>state.user.user;
+export const getUserdetails=(state)=>state.user.userdetails;
 export default userSlice.reducer;

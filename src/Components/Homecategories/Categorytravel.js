@@ -37,6 +37,12 @@ function Categorytravel() {
           <Link to={`/category/${128}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/travelbagslap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/travelbagsmobile.jpg" alt=""></img>
+            </div>
     <div className='content'>
     
           { hometravel.map((value,index)=>{
@@ -54,12 +60,7 @@ function Categorytravel() {
         })}       
     
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/travelbagslap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/travelbagsmobile.jpg" alt=""></img>
-            </div>
+   
 </div>
   )
 }

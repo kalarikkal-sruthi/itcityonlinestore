@@ -10,6 +10,7 @@ import Table from 'react-bootstrap/Table';
 import { getCountry } from '../../Redux/countrySlice';
 import { useTranslation } from 'react-i18next';
 import './Register.css'
+import { getUserdetails,fetchAsyncuserdetails} from '../../Redux/userSlice';
 function Myorder() {
 
 
@@ -22,6 +23,7 @@ function Myorder() {
   const { carts } = useSelector((state) => state.cart)
   const [total, setTotal] = useState(0);
   const country=useSelector(getCountry);
+ 
 
 
   useEffect(() => {
@@ -34,12 +36,14 @@ function Myorder() {
 
   }, [carts,total]);
 
+
+
   if (carts.length === 0) {
     return (
       <div className='container my-5'>
         <div className='empty-cart  d-flex flex-row justify-content-center flex-column align-items-center'>
-          <img src={shopping_cart} alt="" />
-          <span className='empty-font fw-6 fs-15 text-gray'>{t("Your shopping cart is empty.")}</span>
+          {/* <img src={shopping_cart} alt="" /> */}
+          <span className='empty-font fw-6 fs-15 text-gray'>{t("You dont have any history.")}</span>
           <Link to="/" className='shopping-btn bg-orange text-white fw-5'>{t("Go shopping Now")}</Link>
         </div>
       </div>

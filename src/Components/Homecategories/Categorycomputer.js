@@ -37,6 +37,12 @@ function Categorycomputer() {
                   <Link to={`/category/${98}`}><Button >{t("View All")}</Button></Link>
                 </div>
             </div>
+            <div className='bannerimage'>
+                <img src="/homeslider/computerlap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/computermobile.jpg" alt=""></img>
+            </div>
             <div className='content'>
                
                   {homecomputer.map((value,index)=>{
@@ -55,12 +61,7 @@ function Categorycomputer() {
                     
               
             </div>
-            <div className='bannerimage'>
-                <img src="/homeslider/computerlap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/computermobile.jpg" alt=""></img>
-            </div>
+           
         </div>
   )
 }

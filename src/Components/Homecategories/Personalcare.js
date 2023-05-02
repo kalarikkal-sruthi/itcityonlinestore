@@ -37,6 +37,12 @@ function Categorywatches() {
           <Link to={`/category/${133}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/perfumeandwatcheslap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/perfumeandwatchesmobile.jpg" alt=""></img>
+            </div>
     <div className='content'>
    
           {homepersonal.map((value,index)=>{
@@ -54,12 +60,7 @@ function Categorywatches() {
         })}       
    
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/perfumeandwatcheslap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/perfumeandwatchesmobile.jpg" alt=""></img>
-            </div>
+   
 </div>
   )
 }

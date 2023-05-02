@@ -38,6 +38,12 @@ function Categoryhome() {
               <Link to={`/category/${120}`}><Button >{t("View All")}</Button></Link>
             </div>
         </div>
+        <div className='bannerimage'>
+                <img src="/homeslider/homelap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/home.jpg" alt=""></img>
+            </div>
         <div className='content'>
           
               {homeHome.map((value,index)=>{
@@ -56,12 +62,7 @@ function Categoryhome() {
                 
           
         </div>
-        <div className='bannerimage'>
-                <img src="/homeslider/homelap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/home.jpg" alt=""></img>
-            </div>
+        
     </div>
      )
 }

@@ -18,13 +18,14 @@ import priceFilter from '../../Redux/priceFilter';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import {ScaleLoader} from "react-spinners";
-const itemsPerPage = 32;
-function Productbycategory(products) {
+
+const itemsPerPage = 20;
+function Productbycategory() {
     const { t, i18n } = useTranslation();
 
     const [currentPage, setCurrentPage] = useState(1);
-    
-
+    const [filteredProduct, setFilteredProduct] = useState([]);
+   
     const dispatch = useDispatch();
     const { category_id } = useParams()
     console.log(category_id);
@@ -35,13 +36,19 @@ function Productbycategory(products) {
         dispatch(fetchAsyncinnerproducts({ category: category_id, cur: country }))
     }, [dispatch,category_id,country]);
 
-   
+
+  
+
 
 
     const innercategories = useSelector(getinnerProducts);
     const loading = useSelector((state) => state.categoriesnav.loading);
     console.log('loading',loading);
     console.log('innercategories', innercategories);
+
+    // useEffect(() => {
+    //   setFilteredProduct(innercategories.filter(product => filterbrand.includes(parseInt(product.product_brand))));
+    // }, [filterbrand]);
 
     const maxPage = Math.ceil(innercategories.length / itemsPerPage);
     const start = (currentPage - 1) * itemsPerPage;
@@ -78,12 +85,13 @@ function Productbycategory(products) {
           justifyContent: 'center',
           padding:'250px 0px 0px 0px', 
           // alignItems: 'center',
-          height: '450vh',
+          height: '500vh',
         },
       };
     return (
         <div>
             <Container fluid>
+
                 <Row >
                     <Col xs={12} sm={12} md={12} lg={3} >
                         <Navbar expand="lg" style={{ Padding: '0px',height:'2500px;' }}>
@@ -132,12 +140,14 @@ function Productbycategory(products) {
                         </div>
                        </div>
                        <div className={`sidebar-overlay ${isOpen == true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
+                      
+                       
                     </Col>
                     
                                
                     <Col xs={12} sm={12} md={12} lg={9}  className='d-flex flex-wrap justify-content-center'>
-                    
-                  
+                
+                   
                     {
 
 loading ?

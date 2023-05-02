@@ -35,6 +35,12 @@ function Categorytablet() {
           <Link to={`/category/${89}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/tabletslap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/tabletsmobile.jpg" alt=""></img>
+            </div>
     <div className='content'>
        
           {hometablet.map((value,index)=>{
@@ -53,12 +59,7 @@ function Categorytablet() {
             
       
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/tabletslap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/tabletsmobile.jpg" alt=""></img>
-            </div>
+   
 </div>
   )
 }

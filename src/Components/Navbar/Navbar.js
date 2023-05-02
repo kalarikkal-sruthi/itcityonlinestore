@@ -23,8 +23,12 @@ import { useTranslation } from 'react-i18next';
 
 function Topbar() {
   const dispatch = useDispatch()
+
   const categories = useSelector(getcategoriesNav);
   console.log('categoriesnav', categories);
+
+
+
   // const carts = useSelector(getAllCarts);
   const carts = useSelector(getAllCarts);
   const itemsCount = useSelector(getCartItemsCount);
@@ -68,7 +72,7 @@ function Topbar() {
 
             <div className='center'>
               <Link to="/"> <img src="/itcitylogo-white.png" alt=""></img></Link></div>
-            <Navbar.Collapse id="navbarScroll">
+             <Navbar.Collapse id="navbarScroll">
               <Nav
                 className="me-auto my-2 my-lg-0 text-white"
                 style={{ maxHeight: '100px' }}

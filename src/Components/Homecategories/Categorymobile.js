@@ -35,6 +35,12 @@ function Categorymobile() {
           <Link to={`/category/${82}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/mobilelap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/mobiledevice.jpg" alt=""></img>
+            </div>
     <div className='content'>
        
           {homemobile.map((value,index)=>{
@@ -52,12 +58,7 @@ function Categorymobile() {
             
         
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/mobilelap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/mobiledevice.jpg" alt=""></img>
-            </div>
+  
 </div></div>
   )
 }

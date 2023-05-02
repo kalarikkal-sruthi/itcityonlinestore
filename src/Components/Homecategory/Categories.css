@@ -12,6 +12,7 @@
   letter-spacing: .5px;
 }
 .category-main {
+  padding: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
@@ -22,9 +23,20 @@
   padding: 0px 0px 0px 0px;
   /* min-width: 100%; */
   display: flex;
-  overflow-x: auto;justify-content: center;
+  overflow-x: auto;
+  /* justify-content: center; */
 }
 .categories::-webkit-scrollbar {
+  display: none;
+}
+.categoriesfooter{
+  padding: 0px 0px 0px 0px;
+  min-width: 100%;
+  display: flex;
+  overflow-x: auto;
+  justify-content: center;
+}
+.categoriesfooter::-webkit-scrollbar {
   display: none;
 }
 .footerclass h3{

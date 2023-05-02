@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
 import { APIClient } from "../Utils/Api/Api";
 
 
@@ -12,6 +13,9 @@ export const fetchAsyncategories = createAsyncThunk(
     return data;
   }
 );
+
+
+
 //productbycategory
 export const fetchAsyncinnerproducts = createAsyncThunk(
   'categoriesnav/fetchAsyncsubcategories',
@@ -50,6 +54,8 @@ export const fetchAsyncgetAllProductByColor = createAsyncThunk(
 );
 const initialState = {
   categoriesnav: [],
+
+
   innerproducts: [],
   
   subcategory:[],
@@ -68,7 +74,10 @@ const categorynavSlice = createSlice({
     })
     .addCase(fetchAsyncategories.rejected, () => {
       console.log('Rejected')
-  })
+    })
+
+
+
   .addCase(fetchAsyncinnerproducts.fulfilled, (state, action) => {
     state.loading = false;
 

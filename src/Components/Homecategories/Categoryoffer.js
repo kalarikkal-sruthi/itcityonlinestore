@@ -30,6 +30,12 @@ function Categoryoffer() {
           <Link to={`/category/${153}`}><Button >{t("View All")}</Button></Link>
         </div>
     </div>
+    <div className='bannerimage'>
+                <img src="/homeslider/offerlap.jpg" alt=""></img>
+            </div>
+            <div className='bannerimagemobile'>
+                <img src="/homeslider/offermobile1.jpg" alt=""></img>
+            </div>
     <div className='content'>
        
           {homeoffer.map((value,index)=>{
@@ -48,12 +54,7 @@ function Categoryoffer() {
             
       
     </div>
-    <div className='bannerimage'>
-                <img src="/homeslider/offerlap.jpg" alt=""></img>
-            </div>
-            <div className='bannerimagemobile'>
-                <img src="/homeslider/offermobile1.jpg" alt=""></img>
-            </div>
+    
 </div>
   )
 }

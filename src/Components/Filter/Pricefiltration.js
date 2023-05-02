@@ -63,10 +63,11 @@ function Pricefiltration() {
     <input type="number" id="max-price" value={maxPrice} onChange={handleMaxPriceChange}/>
   </form> */}
    <div>
-      <label>{t("Min Price")}:</label>
+      <label>{t("Min Price")} : </label>
       <input type="number" value={minPrice} onChange={handleMinPriceChange} />
-      <br />
-      <label>{t("Max Price")}:</label>
+      <br></br>
+      <br></br>
+      <label>{t("Max Price")} : </label>
       <input type="number" value={maxPrice} onChange={handleMaxPriceChange} />
     </div>
   
