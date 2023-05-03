@@ -79,6 +79,7 @@ const [total, setTotal] = useState(0);
     setshippingAddress({ ...shippingAddress, ...address });
     localStorage.setItem("shipping", JSON.stringify(address));
   };
+ 
   const completeshopping = async (e) => {
     e.preventDefault();
     console.log({ shippingAddress });
