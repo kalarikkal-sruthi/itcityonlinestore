@@ -40,7 +40,7 @@ function Searchpage() {
               <h3>{t("Search results")}:</h3>
             </div>
             <Row>
-              {searchProducts.map((product, index) => {
+              {searchProducts.slice(0, 10).map((product, index) => {
                 return (
 
                   <Col xs={12} sm={6} md={4} lg={3} >

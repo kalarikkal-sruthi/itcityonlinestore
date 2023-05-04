@@ -62,7 +62,8 @@ function App() {
         <Route path='/cat-footer' element={<Footercategory />}></Route>
       </Routes>
       <Routes>
-        <Route path='/profile' element={<Profile />} ></Route>  </Routes>
+        <Route path='/profile' element={<Profile />} ></Route> 
+      </Routes>
       <Routes>
         <Route path='/myorder' element={<Myorder />} ></Route>
       </Routes>

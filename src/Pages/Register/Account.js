@@ -80,7 +80,7 @@ function Account() {
             <Col sm={9} className='my-3'>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  <Table striped bordered hover>
+                  <Table striped bordered hover responsive>
                     <thead>
                       <tr>
                         <th>My Profile</th>

@@ -6,15 +6,16 @@ import { useEffect } from 'react'
 import { getUserdetails, fetchAsyncuserdetails } from '../../Redux/userSlice';
 
 function Profile() {
-  const Userdetails = useSelector(getUser)
-  const userdetails = useSelector(getUserdetails)
+  // const Userdetails = useSelector(getUser)
+  // const userdetails = useSelector(getUserdetails)
   const dispatch = useDispatch()
-  const userdata = Userdetails.user
+  // const userdata = Userdetails.user
 
   useEffect(() => {
     dispatch(fetchAsyncuserdetails());
-
   }, [dispatch])
+  const userinfo = useSelector(getUserdetails)
+ console.log(userinfo);
 
   return (
     <div>
@@ -23,7 +24,7 @@ function Profile() {
         <Row>
 
           <Col>
-            <Table striped bordered hover>
+            <Table striped bordered hover responsive>
 
               <thead>
                 <tr>
@@ -34,7 +35,7 @@ function Profile() {
               <tbody>
                 <tr><td>Name:</td>
 
-                  <td>{userdata.customer_name}</td>
+                  {/* <td>{userdata.customer_name}</td> */}
                 </tr>
                 <tr><td>Mobile Number:</td></tr>
                 <tr><td>Place/Area:</td></tr>
