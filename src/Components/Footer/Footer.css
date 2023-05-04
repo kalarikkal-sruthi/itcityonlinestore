@@ -25,41 +25,51 @@
     padding: 0px;
     text-decoration: none;
 }
+
 .footer-icons .nav-item {
-   text-align: center;
+    text-align: center;
 }
-.footer-div{
+
+.footer-div {
     background-color: black;
     color: white;
     display: flex;
     justify-content: space-between;
     bottom: 0px;
- 
-   
+
+
 
     width: 100%;
 }
-.desktopview{
+
+/* .desktopview {
     bottom: 0px;
-}
+} */
+
 @media only screen and (max-width: 600px) {
     .desktopview {
-      display: none;
+        display: none;
     }
 }
+
 @media only screen and (min-width: 600px) {
-    .mobilediv{
-      display: none;
+    .mobilediv {
+        display: none;
     }
 }
-.footer-div ul li{
+
+.footer-div ul li {
     list-style-type: none;
 }
-.footer-div ul h5{
-    color: #f5831a;}
-.bottom-footer{
+
+.footer-div ul h5 {
+    color: #f5831a;
+}
+
+.bottom-footer {
     text-align: center;
 }
-.bottom-footer h6{
+
+.bottom-footer h6 {
     color: #777;
 }

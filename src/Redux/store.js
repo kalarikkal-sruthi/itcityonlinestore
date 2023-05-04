@@ -10,6 +10,7 @@ import userReducer from './userSlice'
 import authReducer from './authSlice'
 import filterReducer from './filterSlice'
 import priceReducer from './priceFilter'
+import brandsReducer from './brandsSlice'
 
 
 
@@ -25,7 +26,9 @@ export const store = configureStore({
     user:userReducer,
     auth:authReducer,
     filter:filterReducer,
-    priceFilter:priceReducer
+    priceFilter:priceReducer,
+    brands:brandsReducer,
+    
 
     // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   }

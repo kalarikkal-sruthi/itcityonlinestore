@@ -6,7 +6,7 @@ import './Sidebar.css';
 import { fetchAsyncategories } from '../../Redux/filterSlice';
 import { getcategoriesNav } from '../../Redux/filterSlice';
 import { Link } from 'react-router-dom';
-import Filter from '../Filter/Filter';
+
 
 
 function Sidebar() {
@@ -28,24 +28,24 @@ function Sidebar() {
         <button className='sidebar-hide-btn' type="button" onClick={() => dispatch(setSidebarOff())}>
           <CloseOutlinedIcon variant="outlined" sx={{ Color: '#f5831a' }} />
         </button>
-     
-          <div className='sidebar-cnt'>
-            <div className='cat-title fs-8 text-uppercase fw-6 ls-1h'>All Categories</div>
-            <ul className='cat-list p-0'>
-              {
-                categories.map((value, index) => {
-                  return (
 
-                    <Link to={`/category/${value.cat_id}`} className='sidebarlink text-dark text-decoration-none ' key={index}>{value.cat_name}
-                      <br></br>
-                    </Link>
-                  )
-                })
-              }
+        <div className='sidebar-cnt'>
+          <div className='cat-title fs-8 text-uppercase fw-6 ls-1h'>All Categories</div>
+          <ul className='cat-list p-0'>
+            {
+              categories.map((value, index) => {
+                return (
 
-            </ul>
-          </div>
-    
+                  <Link to={`/category/${value.cat_id}`} className='sidebarlink text-dark text-decoration-none ' key={index}>{value.cat_name}
+                    <br></br>
+                  </Link>
+                )
+              })
+            }
+
+          </ul>
+        </div>
+
 
 
       </aside>

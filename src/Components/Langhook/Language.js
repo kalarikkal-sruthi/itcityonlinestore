@@ -8,11 +8,11 @@ function Language() {
   };
   return (
     <div>
-        <select onChange={changeLanguage} >
+      <select onChange={changeLanguage} >
         <option style={{ color: 'black' }} >{t("Select Language")}</option>
         <option style={{ color: 'black' }} value="en">English</option>
-        <option style={{ color: 'black' }} value="ar"  >{t("Arabic")}</option>     
-        </select>
+        <option style={{ color: 'black' }} value="ar"  >{t("Arabic")}</option>
+      </select>
     </div>
   )
 }

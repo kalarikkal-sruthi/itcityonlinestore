@@ -2,25 +2,25 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Form, Button, Col, Row, Container } from 'react-bootstrap'
 import { registration } from '../../Redux/userSlice';
-import Loginmodel from '../../Components/Loginmodel/Loginmodel';
+import Loginmodel from '../../Components/Loginmodel/Login';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import './Register.css'
 export function Register() {
- 
+
   const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const [name, setCustomername] = useState('');
   const [email, setCustomeremail] = useState('');
   const [password, setPassword] = useState('');
-  const  navigate=useNavigate()
+  const navigate = useNavigate()
   const handleSubmit = (e) => {
-   
+
     e.preventDefault();
     dispatch(registration({ name, email, password }));
     setTimeout(() => {
       navigate('/login');
-      }, 2000);
+    }, 2000);
 
     setCustomername('')
     setCustomeremail('')
@@ -33,10 +33,10 @@ export function Register() {
     <>
       <Container >
         <Row className="registration">
-        <Col xs={12} md={6} sm={6} lg={6} className=''>
+          <Col xs={12} md={6} sm={6} lg={6} className=''>
             <Loginmodel />
-            </Col>
-            <Col xs={12} md={6} sm={6} lg={6} className=' registerform '>
+          </Col>
+          <Col xs={12} md={6} sm={6} lg={6} className=' registerform '>
             <h5 className='cart-modal-title fw-7 fs-15 font-manrope text-center'>{t("Register")}</h5>
             <form onSubmit={handleSubmit}>
               <Form.Group>
@@ -55,11 +55,11 @@ export function Register() {
                 <Button type="submit" class=" w-100 btn btn-primary">{t("Register")}</Button>
               </div>
             </form>
-            </Col>
-          </Row>
-            
-            
-            </Container>
+          </Col>
+        </Row>
+
+
+      </Container>
     </>
 
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import MenuOpenOutlinedIcon from '@mui/icons-material/MenuOpenOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import './Navbar.css'
@@ -11,9 +10,9 @@ import { fetchAsyncategories } from '../../Redux/filterSlice';
 import { getcategoriesNav } from '../../Redux/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSidebarOn } from '../../Redux/sidebarSlice';
-import { setSidebarfilterOn } from '../../Redux/filterSlice';
-import { getAllCarts, getCartTotal, getCartItemsCount } from '../../Redux/cartSlice';
-import Loginmodel from '../Loginmodel/Loginmodel';
+
+import { getAllCarts,getCartItemsCount } from '../../Redux/cartSlice';
+
 import Language from '../Langhook/Language';
 import CenterFocusWeakIcon from '@mui/icons-material/CenterFocusWeak';
 import Countryselection from '../Countryselection/Countryselection';
@@ -25,26 +24,22 @@ function Topbar() {
   const dispatch = useDispatch()
 
   const categories = useSelector(getcategoriesNav);
-  console.log('categoriesnav', categories);
 
 
 
-  // const carts = useSelector(getAllCarts);
   const carts = useSelector(getAllCarts);
   const itemsCount = useSelector(getCartItemsCount);
-  console.log('carts', carts);
-  // const itemsCount = useSelector(getCartItemsCount);
-  console.log('itemsCount' + itemsCount);
+  
   const [searchterm, setsearchTerm] = useState('')
-  const myItem =JSON.parse(localStorage.getItem('cart')) || ''
+  const myItem = JSON.parse(localStorage.getItem('cart')) || ''
   const objLength = Object.keys(myItem).length;
-  console.log('myItem',objLength);
+
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     dispatch(fetchAsyncategories(getcategoriesNav));
   }, []);
-  
+
 
 
   const handlesearchterm = (e) => {
@@ -72,7 +67,7 @@ function Topbar() {
 
             <div className='center'>
               <Link to="/"> <img src="/itcitylogo-white.png" alt=""></img></Link></div>
-             <Navbar.Collapse id="navbarScroll">
+            <Navbar.Collapse id="navbarScroll">
               <Nav
                 className="me-auto my-2 my-lg-0 text-white"
                 style={{ maxHeight: '100px' }}
@@ -90,29 +85,24 @@ function Topbar() {
 
             <div className='d-flex'>
               <div className='cart-btn'>
-              <Link to="/login" className='cart-btn'>
-                <Person2OutlinedIcon sx={{ color: '#fff', margin: '2px' }} variant="outlined"  ></Person2OutlinedIcon>
-               </Link>
+                <Link to="/login" className='cart-btn'>
+                  <Person2OutlinedIcon sx={{ color: '#fff', margin: '2px' }} variant="outlined"  ></Person2OutlinedIcon>
+                </Link>
                 <div className='cart-items-value'></div>
-                {/* <Loginmodel /> */}
               </div>
 
 
               <div className='navbar-cart flex align-center'>
                 <Link to="/cart" className='cart-btn'>
                   <ShoppingCartOutlinedIcon sx={{ color: '#fff', margin: '2px' }} variant="outlined" />
-                  {objLength ? (  <div className='cart-items-value'>{objLength}</div>):
-                  (  <div className='cart-items-value'>0</div>)}
-                  
+                  {objLength ? (<div className='cart-items-value'>{objLength}</div>) :
+                    (<div className='cart-items-value'>0</div>)}
+
                 </Link>
               </div>
 
             </div>
-            {/* <div className=''></div>
            
-            <Cartmodel/> */}
-
-
           </Container>
         </Navbar>
         <Container>
@@ -120,13 +110,13 @@ function Topbar() {
             <div className="searchBar">
               <input id="searchQueryInput" type="text" placeholder={t("Search Products,Brands and More")} onChange={(e) => { handlesearchterm(e) }} />
               <Link to={`/search/${searchterm}`} className='d-flex'>
-             
+
                 <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
-                
-                <SearchOutlinedIcon variant="outlined" sx={{ color: "black" }} />
-                
-              </button>
-              <CenterFocusWeakIcon variant="outlined" sx={{ color: "black" }} />
+
+                  <SearchOutlinedIcon variant="outlined" sx={{ color: "black" }} />
+
+                </button>
+                <CenterFocusWeakIcon variant="outlined" sx={{ color: "black" }} />
                 <KeyboardVoiceOutlinedIcon variant="outlined" sx={{ color: "black" }} />
               </Link>
             </div>
@@ -134,11 +124,11 @@ function Topbar() {
         </Container>
         <div className='country-code'>
           <div className='coutry'>
-            <p><Countryselection/></p>
+            <p><Countryselection /></p>
           </div>
           <div className='coutry'>
             <p>
-         <Language />
+              <Language />
             </p>
           </div>
         </div>

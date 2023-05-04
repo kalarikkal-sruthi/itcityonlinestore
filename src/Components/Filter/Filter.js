@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-import { Button, Badge, ListGroup, InputGroup } from 'react-bootstrap'
+import { Button} from 'react-bootstrap'
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
-import Form from 'react-bootstrap/Form';
-import { Switch, label } from '@mui/material';
-import Slider from '@mui/material/Slider';
 import './Filter.css'
 import Pricefiltration from './Pricefiltration';
 import Filtrationproductbycategory from './Filtrationproductbycategory';
@@ -17,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 function Filter() {
   const { t, i18n } = useTranslation();
-  const {category_id}=useParams()
+  const { category_id } = useParams()
   const [expanded, setExpanded] = useState(false)
   const [expandedtwo, setExpandedtwo] = useState(false)
   const [expandedthree, setExpandedthree] = useState(false)
@@ -27,7 +24,7 @@ function Filter() {
     <div className='filtration'>
 
       <div className='filter-main '>
-        <div className='filter '>
+        <div className='filter'>
 
 
           <h5 className="fw-bold mb-0" onClick={() => { setExpanded(!expanded) }}>{t("Categories")}</h5>
@@ -42,7 +39,7 @@ function Filter() {
         </div>
         {!expanded &&
           <>
-           <Filtrationproductbycategory category={category_id}/>
+            <Filtrationproductbycategory category={category_id} />
           </>
         }
         <hr></hr>
@@ -55,16 +52,7 @@ function Filter() {
         </div>
         {!expandedfour &&
           <>
-             <Pricefiltration  />
-            {/* <div className='  '> 
-        <label>KD:</label>
-       <input className='slider w-25' type="text" id="fname" name="fname"></input>
-    
-       <label>KD:</label>
-       <input className='slider w-25' type="text" id="fname" name="fname"></input>
-    
-       </div>  */}
-            {/* <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" /> */}
+            <Pricefiltration />
 
           </>
         }
@@ -78,20 +66,7 @@ function Filter() {
           </Button>
         </div>
         {!expandedtwo &&
-        <Filtrationbybrand/>
-          // <>
-          //   <div className='checkboxes'>
-          //     <input type="checkbox" />
-          //     <label for="vehicle1" style={{ marginBottom: '2px', marginLeft: "4px" }}>Apple</label>
-          //     <br></br>
-          //     <input type="checkbox" />
-          //     <label for="vehicle2" style={{ marginBottom: '2px', marginLeft: "4px" }}>Huawei</label>
-          //     <br></br>
-          //     <input type="checkbox" />
-          //     <label for="vehicle3" style={{ marginBottom: '2px', marginLeft: "4px" }}>Samsung</label>
-          //     <br></br>
-          //   </div>
-          // </>
+          <Filtrationbybrand />
         }
         <hr></hr>
         <div className='filter'>
@@ -101,23 +76,14 @@ function Filter() {
             }
           </Button></div>
         {!expandedthree &&
-        <>
-        <Filtrationbycolor />
-        </>
-          // <>
-          //   <div className='checkboxes'>
-          //     <input type="checkbox" />
-          //     <label for="vehicle1" style={{ marginBottom: '2px', marginLeft: "4px" }}> Aqua Blue</label>
-
-          //     <br></br>
-          //     <input type="checkbox" />
-          //     <label for="vehicle2" style={{ marginBottom: '2px', marginLeft: "4px" }}>Black</label><br></br>
-          //     <input type="checkbox" />
-          //     <label for="vehicle3" style={{ marginBottom: '2px', marginLeft: "4px" }}>Blue</label><br></br>
-          //   </div>
-          // </>
+          <>
+            <Filtrationbycolor />
+          </>
+         
         }
-      </div></div>
+      </div>
+      
+      </div>
   )
 }
 

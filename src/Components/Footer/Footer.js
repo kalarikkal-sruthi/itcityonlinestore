@@ -8,7 +8,8 @@ import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Row,Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+
 function Footer() {
   const { t, i18n } = useTranslation();
   return (
@@ -50,7 +51,7 @@ function Footer() {
           <Nav.Item>
             <Link to="/account">
 
-            <Person2OutlinedIcon variant="outlined"  ></Person2OutlinedIcon>
+              <Person2OutlinedIcon variant="outlined"  ></Person2OutlinedIcon>
               <h6>{t("Profile")}</h6>
             </Link>
           </Nav.Item>
@@ -63,69 +64,69 @@ function Footer() {
 
 
       <div className='footer-div desktopview pt-3'>
-    <Row className=" p-0 m-0">
-        <Col lg={3} sm={3} md={3} className=" p-0 m-0">
+        <Row className=" p-0 m-0">
+          <Col lg={3} sm={3} md={3} className=" p-0 m-0">
             <ul>
-            <img src="/homeslider/main-logo-footer.png" alt=""></img>
-                <li>info@itcityonlinestore.com</li>
-                <li>+965 90019287</li>
-                <li>IT City online store
-                 Habeeb al Munawar street
-                 Maghatheer complex
+              <img src="/homeslider/main-logo-footer.png" alt=""></img>
+              <li>info@itcityonlinestore.com</li>
+              <li>+965 90019287</li>
+              <li>IT City online store
+                Habeeb al Munawar street
+                Maghatheer complex
                 ezzanine floor. Farwaniah, Kuwait</li>
             </ul>
-        </Col>
-   
+          </Col>
 
-    <Col lg={3} sm={3} md={3} className="p-0 m-0"> 
-      
-            
+
+          <Col lg={3} sm={3} md={3} className="p-0 m-0">
+
+
             <ul>
-            <h5>Information</h5>
-                <li>Delivery Information</li>
-                <li>Privacy Policy</li>
-                <li>Terms&Condition</li>
+              <h5>Information</h5>
+              <li>Delivery Information</li>
+              <li>Privacy Policy</li>
+              <li>Terms&Condition</li>
             </ul>
-        
-    </Col>
 
-    <Col lg={3} sm={3} md={3} className="p-0 m-0"> 
-        
+          </Col>
+
+          <Col lg={3} sm={3} md={3} className="p-0 m-0">
+
             <ul>
-                <h5>Categories</h5>
-                <li>Accessories</li>
-                <li>Computers</li>
-                <li>Mobiles</li>
-                <li>Tablets</li>
-                <li>Home Appliances</li>
-                <li>Watches & Perfumes</li>
-                <li>Travel Bags</li>
-                <li>Personal Care</li>
-                <li>Cameras & Drones </li>
-                <li>Offer Zone</li>
-                <li>Gaming</li>
+              <h5>Categories</h5>
+              <li>Accessories</li>
+              <li>Computers</li>
+              <li>Mobiles</li>
+              <li>Tablets</li>
+              <li>Home Appliances</li>
+              <li>Watches & Perfumes</li>
+              <li>Travel Bags</li>
+              <li>Personal Care</li>
+              <li>Cameras & Drones </li>
+              <li>Offer Zone</li>
+              <li>Gaming</li>
             </ul>
-        
-    </Col>
 
-<Col lg={3} sm={3} md={3} className="p-0 m-0">
-    <ul>
-        <h5>Service</h5>
-        <li>Wish List</li>
-        <li>Shopping Cart</li>
-        <li>Return Policy</li>
-        <li>About Us</li>
-    </ul>
-</Col>
-<hr></hr>
-<div className='bottom-footer'>
-<h6>© 2019 IT CITY ONLINE STORE </h6>
+          </Col>
 
-</div>
+          <Col lg={3} sm={3} md={3} className="p-0 m-0">
+            <ul>
+              <h5>Service</h5>
+              <li>Wish List</li>
+              <li>Shopping Cart</li>
+              <li>Return Policy</li>
+              <li>About Us</li>
+            </ul>
+          </Col>
+          <hr></hr>
+          <div className='bottom-footer'>
+            <h6>© 2019 IT CITY ONLINE STORE </h6>
 
-</Row>
+          </div>
 
-</div>
+        </Row>
+
+      </div>
 
 
     </div>

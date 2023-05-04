@@ -19,12 +19,13 @@ export const fetchAsyncategories = createAsyncThunk(
 //productbycategory
 export const fetchAsyncinnerproducts = createAsyncThunk(
   'categoriesnav/fetchAsyncsubcategories',
-  async ({category,cur}) => {
+  async ({ category, cur }) => {
     const response = await APIClient.get(`/findAllProductbyCategoryid?cur=${cur}&category_id=${category}`);
     const data = await response.data.data;
     return data;
   }
 );
+
 //subcategorybycategory
 export const fetchAsyncsubcategorybycategory = createAsyncThunk(
   'categoriesnav/fetchAsyncsubcategorybycategory',
@@ -34,6 +35,7 @@ export const fetchAsyncsubcategorybycategory = createAsyncThunk(
     return data;
   }
 );
+
 //getfindAllBrandDetails
 export const fetchAsyncgetfindAllBrandDetails = createAsyncThunk(
   'categoriesnav/fetchAsyncgetfindAllBrandDetails',
@@ -43,10 +45,11 @@ export const fetchAsyncgetfindAllBrandDetails = createAsyncThunk(
     return data;
   }
 );
+
 //getAllProductBycolor
 export const fetchAsyncgetAllProductByColor = createAsyncThunk(
   'categoriesnav/fetchAsyncgetAllProductByColor',
-  async (brand_id) => {
+  async () => {
     const response = await APIClient.get(`/getAllColor`);
     const data = await response.data.data;
     return data;
@@ -57,61 +60,61 @@ const initialState = {
 
 
   innerproducts: [],
-  
-  subcategory:[],
-  brand:[],
-  color:[],
+
+  subcategory: [],
+  brand: [],
+  color: [],
   loading: false,
 }
 const categorynavSlice = createSlice({
   name: "categoriesnav",
   initialState,
   reducers: {},
-  extraReducers:(builder) =>{
+  extraReducers: (builder) => {
     builder
-    .addCase(fetchAsyncategories.fulfilled, (state, action) => {
-      state.categoriesnav = action.payload;
-    })
-    .addCase(fetchAsyncategories.rejected, () => {
-      console.log('Rejected')
-    })
+      .addCase(fetchAsyncategories.fulfilled, (state, action) => {
+        state.categoriesnav = action.payload;
+      })
+      .addCase(fetchAsyncategories.rejected, () => {
+        console.log('Rejected')
+      })
 
 
 
-  .addCase(fetchAsyncinnerproducts.fulfilled, (state, action) => {
-    state.loading = false;
+      .addCase(fetchAsyncinnerproducts.fulfilled, (state, action) => {
+        state.loading = false;
 
-    state.innerproducts = action.payload;
-})
-  .addCase(fetchAsyncinnerproducts.rejected, (state, action) => {
-    state.loading = true;
-    console.log('Rejected')
-})
+        state.innerproducts = action.payload;
+      })
+      .addCase(fetchAsyncinnerproducts.rejected, (state, action) => {
+        state.loading = true;
+        console.log('Rejected')
+      })
 
-.addCase(fetchAsyncsubcategorybycategory.fulfilled, (state, action) => {
-  state.subcategory = action.payload;
-})
+      .addCase(fetchAsyncsubcategorybycategory.fulfilled, (state, action) => {
+        state.subcategory = action.payload;
+      })
 
-.addCase(fetchAsyncsubcategorybycategory.rejected, () => {
-  console.log('Rejected')
-})
+      .addCase(fetchAsyncsubcategorybycategory.rejected, () => {
+        console.log('Rejected')
+      })
 
 
-.addCase(fetchAsyncgetfindAllBrandDetails.fulfilled, (state, action) => {
-  state.brand = action.payload;
-})
+      .addCase(fetchAsyncgetfindAllBrandDetails.fulfilled, (state, action) => {
+        state.brand = action.payload;
+      })
 
-.addCase(fetchAsyncgetfindAllBrandDetails.rejected, () => {
-  console.log('Rejected')
-})
+      .addCase(fetchAsyncgetfindAllBrandDetails.rejected, () => {
+        console.log('Rejected')
+      })
 
-.addCase(fetchAsyncgetAllProductByColor.fulfilled, (state, action) => {
-  state.color = action.payload;
-})
+      .addCase(fetchAsyncgetAllProductByColor.fulfilled, (state, action) => {
+        state.color = action.payload;
+      })
 
-.addCase(fetchAsyncgetAllProductByColor.rejected, () => {
-  console.log('Rejected')
-})
+      .addCase(fetchAsyncgetAllProductByColor.rejected, () => {
+        console.log('Rejected')
+      })
   },
 },)
 

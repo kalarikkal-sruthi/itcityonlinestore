@@ -11,6 +11,6 @@ const countrySlice = createSlice({
         }
     }
 })
-export const getCountry=(state)=>state.country.country
-export const {setSelected}=countrySlice.actions
+export const getCountry = (state) => state.country.country
+export const { setSelected } = countrySlice.actions
 export default countrySlice.reducer

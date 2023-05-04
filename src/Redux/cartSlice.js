@@ -1,8 +1,8 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const fetchFromLocalStorage = () => {
     let cart = localStorage.getItem('cart');
-    if(cart){
+    if (cart) {
         return JSON.parse(localStorage.getItem('cart'));
     } else {
         return [];
@@ -16,7 +16,7 @@ const storeInLocalStorage = (data) => {
 const initialState = {
     carts: fetchFromLocalStorage(),
     itemsCount: 0,
-    totalAmount:0,
+    totalAmount: 0,
     isCartMessageOn: false
 }
 
@@ -27,9 +27,9 @@ const cartSlice = createSlice({
         addToCart: (state, action) => {
             const isItemInCart = state.carts.find(item => item.id === action.payload.id);
 
-            if(isItemInCart){
+            if (isItemInCart) {
                 const tempCart = state.carts.map(item => {
-                    if(item.id === action.payload.id){
+                    if (item.id === action.payload.id) {
                         let tempQty = item.product_qty + action.payload.product_qty;
                         return {
                             ...item, product_qty: tempQty,
@@ -43,12 +43,12 @@ const cartSlice = createSlice({
                 state.carts = tempCart;
                 storeInLocalStorage(state.carts);
             } else {
-                state.carts.push({...action.payload});
+                state.carts.push({ ...action.payload });
                 storeInLocalStorage(state.carts);
             }
         },
         removeFromCart: (state, action) => {
-            const  tempCart = state.carts.filter(item => item.id !== action.payload);
+            const tempCart = state.carts.filter(item => item.id !== action.payload);
             state.carts = tempCart;
             storeInLocalStorage(state.carts);
         },
@@ -57,7 +57,7 @@ const cartSlice = createSlice({
             state.carts = [];
             storeInLocalStorage(state.carts);
         },
-      
+
         setCartMessageOn: (state) => {
             state.isCartMessageOn = true;
         },
@@ -68,7 +68,7 @@ const cartSlice = createSlice({
     }
 });
 
-export const {addToCart, setCartMessageOff, setCartMessageOn, getCartTotal, clearCart, removeFromCart} = cartSlice.actions;
+export const { addToCart, setCartMessageOff, setCartMessageOn, getCartTotal, clearCart, removeFromCart } = cartSlice.actions;
 export const getAllCarts = (state) => state.cart.carts;
 export const getCartItemsCount = (state) => state.cart.itemsCount;
 export const getCartMessageStatus = (state) => state.cart.isCartMessageOn;

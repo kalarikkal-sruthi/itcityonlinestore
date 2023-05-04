@@ -1,23 +1,28 @@
-.registerform{
+.registerform {
     margin-bottom: 40px;
 }
-.registration{
+
+.registration {
     margin: 0px 0px 60px 0px;
 }
-.account{
+
+.account {
     margin: 0px 0px 60px 0px;
 }
-.myorder{
+
+.myorder {
     margin: 0px 0px 60px 0px;
 
 }
-.nav-pills .nav-link{
-    background-color:#f5831a;
+
+.nav-pills .nav-link {
+    background-color: #f5831a;
     color: white;
 }
 
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-    background-color:#f5831a;
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #f5831a;
     color: white;
 }

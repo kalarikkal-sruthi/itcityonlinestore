@@ -2,15 +2,18 @@
   width: 75px;
   margin: 0px 10px;
 }
+
 .dd img {
   width: 60px;
 }
+
 .dd p {
   text-align: center;
   font-size: 14px;
   margin: 10px 0px 0px 0px;
   letter-spacing: .5px;
 }
+
 .category-main {
   padding: 20px;
   margin-top: 20px;
@@ -19,6 +22,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .categories {
   padding: 0px 0px 0px 0px;
   /* min-width: 100%; */
@@ -26,23 +30,27 @@
   overflow-x: auto;
   /* justify-content: center; */
 }
+
 .categories::-webkit-scrollbar {
   display: none;
 }
-.categoriesfooter{
+
+.categoriesfooter {
   padding: 0px 0px 0px 0px;
   min-width: 100%;
   display: flex;
   overflow-x: auto;
   justify-content: center;
 }
+
 .categoriesfooter::-webkit-scrollbar {
   display: none;
 }
-.footerclass h3{
+
+.footerclass h3 {
   font-size: 20px;
-    margin-bottom: 0px;
-    font-weight: bold;
-    color: #f5831a;
-    margin: 30px 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  color: #f5831a;
+  margin: 30px 0px;
 }
