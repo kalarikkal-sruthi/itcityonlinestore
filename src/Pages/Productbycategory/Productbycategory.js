@@ -88,7 +88,7 @@ function Productbycategory() {
       <Container fluid>
 
         <Row >
-          <Col xs={12} sm={12} md={12} lg={3}  style={{height:'3000px'}}>
+          <Col xs={12} sm={12} md={12} lg={3} className='productcat' >
             <Navbar expand="lg" style={{ Padding: '0px'}}>
               <Container fluid >
                 <Navbar.Brand className='brand-logo' chref="#" >

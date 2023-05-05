@@ -6,10 +6,10 @@ import { useEffect } from 'react'
 import { getUserdetails, fetchAsyncuserdetails } from '../../Redux/userSlice';
 
 function Profile() {
-  // const Userdetails = useSelector(getUser)
-  // const userdetails = useSelector(getUserdetails)
+  const Userdetails = useSelector(getUser)
+  const userdetails = useSelector(getUserdetails)
   const dispatch = useDispatch()
-  // const userdata = Userdetails.user
+  const userdata = Userdetails.user
 
   useEffect(() => {
     dispatch(fetchAsyncuserdetails());
@@ -20,10 +20,10 @@ function Profile() {
   return (
     <div>
 
-      <Container className="m-5">
+      <Container className="my-5">
         <Row>
 
-          <Col>
+          <Col md={12}>
             <Table striped bordered hover responsive>
 
               <thead>
@@ -35,14 +35,25 @@ function Profile() {
               <tbody>
                 <tr><td>Name:</td>
 
-                  {/* <td>{userdata.customer_name}</td> */}
+                  <td>{userdata.customer_name}</td>
                 </tr>
-                <tr><td>Mobile Number:</td></tr>
-                <tr><td>Place/Area:</td></tr>
-                <tr><td>Block Number:</td></tr>
-                <tr><td>House/Building Number:</td></tr>
-                <tr><td>Street/Avenue Number:</td></tr>
-                <tr><td>Place/Area:</td></tr>
+                <tr><td>Mobile Number:</td>
+                
+                </tr>
+                <tr><td>Place/Area:</td>
+                
+                </tr>
+                <tr><td>Block Number:</td>
+                
+                </tr>
+                <tr><td>House/Building Number:</td>
+                
+                </tr>
+                <tr><td>Street/Avenue Number:</td>
+                
+                </tr>
+                <tr><td>Place/Area:</td>
+                </tr>
 
 
 

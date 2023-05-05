@@ -1,6 +1,6 @@
 import React from 'react'
 import './Loginmodel.css'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../Redux/userSlice';
@@ -16,6 +16,7 @@ function Loginmodel() {
   const navigate = useNavigate()
   const token = useSelector(getToken);
   const cartmessage = useSelector(getCartMessageStatus)
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (cartmessage) {
@@ -36,6 +37,14 @@ function Loginmodel() {
         alert('Unable to login. Please try after some time.');
         return;
       }
+      const errors = {};
+      if (!customer_email) {
+        errors.email = "Email is required";
+      }
+      if (!password) {
+        errors.password = "Password is required";
+      }
+  
       dispatch(setCartMessageOn(true))
       setTimeout(() => {
         navigate('/');
@@ -55,10 +64,12 @@ function Loginmodel() {
             <Form.Group>
               <Form.Control type="email" name="customer_email" className='rounded-0 my-2'
                 placeholder={t("Enter your email")} />
+                 {errors.email && <div>{errors.email}</div>}
             </Form.Group>
             <Form.Group>
               <Form.Control type="password" name="password" className='rounded-0 my-2'
                 placeholder={t("Enter your  password")} />
+                  {errors.password && <div>{errors.password}</div>}
             </Form.Group>
             <div class="loginbutton">
               <Button type="submit" class=" w-100 btn btn-primary">{t("Login")}</Button>

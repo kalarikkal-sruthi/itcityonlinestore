@@ -34,12 +34,13 @@ function Payment() {
     customer_state: "",
     remarks: "",
     password: "",
+    confirmPassword:"",
 
   });
 
   const [total, setTotal] = useState(0);
 
-
+  const [formErrors, setFormErrors] = useState({});
 
   useEffect(() => {
     setTotal(
@@ -104,24 +105,141 @@ function Payment() {
       user_id: "0",
       cart_data: cartData,
     };
-
+ console.log(purchase);
     try {
-      const cust = await APIClient.post("/createCustomer", customer);
-      const purch = await APIClient.post("/createPurchase", purchase);
-      if (purch.status === 200 || purch.status === 201) {
-        localStorage.removeItem("cart");
-
+      if (validateForm()) {
+        const cust = await APIClient.post("/createCustomer", customer);
+        const purch = await APIClient.post("/createPurchase", purchase);
+        if (purch.status === 200 || purch.status === 201) {
+          localStorage.removeItem("cart");
+  
+         
+          console.log("Form is valid");
+          
+      }
+          
+  
+        }
         dispatch(clearCart());
         dispatch(setCartMessageOn(true))
+
         setTimeout(() => {
           navigate('/');
         }, 2000);
-
-      }
-    } catch (error) {
+        
+    
+    } 
+    
+    
+    catch (error) {
       console.log(error);
     }
   };
+
+
+
+
+  const validateForm = () => {
+    let errors = {};
+    let isValid = true;
+
+    // validate first name
+    if (!reg.customer_name.trim()) {
+      errors.customer_name = "First name is required";
+      isValid = false;
+    }
+
+   
+    // validate email
+    if (!reg.customer_email.trim()) {
+      errors.customer_email = "Email is required";
+      isValid = false;
+    } else if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(reg.customer_email.trim())
+    ) {
+      errors.customer_email = "Invalid email address";
+      isValid = false;
+    }
+
+
+
+     // validate mobile
+     if (!reg.customer_mobile.trim()) {
+      errors.customer_mobile = "Mobile Number is required";
+      isValid = false;
+    }
+    else if(reg.customer_mobile.length < 10){
+      errors.customer_mobile = "Mobile Number must be at least 10 digits";
+      isValid = false;
+
+    }
+
+
+      // validate address name
+      if (!reg.customer_address.trim()) {
+        errors.customer_address = "Customer address is required";
+        isValid = false;
+      }
+   
+
+       // validate pincode name
+       if (!reg.customer_pincode.trim()) {
+        errors.customer_pincode = "Customer pincode is required";
+        isValid = false;
+      }
+
+       // validate first name
+       if (!reg.customer_dist.trim()) {
+        errors.customer_dist = "Customer dist is required";
+        isValid = false;
+      }
+
+
+      if (!reg.customer_state.trim()) {
+        errors.customer_state = "Customer state is required";
+        isValid = false;
+      }
+
+      if (!reg.remarks.trim()) {
+        errors.remarks = "Remarks is required";
+        isValid = false;
+      }
+   
+      
+    
+    
+
+
+
+
+
+    // validate password
+    if (!reg.password.trim()) {
+      errors.password = "Password is required";
+      isValid = false;
+    } else if (reg.password.length < 6) {
+      errors.password = "Password must be at least 6 characters long";
+      isValid = false;
+    }
+
+
+
+
+    // validate confirm password
+    if (!reg.confirmPassword.trim()) {
+      errors.confirmPassword = "Confirm password is required";
+      isValid = false;
+    } else if (reg.confirmPassword !== reg.password) {
+      errors.confirmPassword = "Passwords do not match";
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
+
+  
 
 
 
@@ -131,12 +249,13 @@ function Payment() {
     <div>
       <div className='payment'>
         <Row className='mx-2  p-0' >
+        <Form className='text-start ' disabled={()=>(!validateForm())} style={{display:"contents"}}>
           <Col className='text-start p-2' xs={12} md={12} sm={12} lg={4} >
             <h4 className='fw-bold mb-4'>{t("Shipping Address")}</h4>
 
 
 
-            <Form className='text-start'>
+            
               <FloatingLabel
                 controlId="floatingInput"
                 label={t("Customer Name")}
@@ -147,6 +266,7 @@ function Payment() {
                   onChange={handle}
                   name="customer_name"
                   placeholder={t("Customer Name")} />
+                  {formErrors.customer_name && <div>{formErrors.customer_name}</div>}
               </FloatingLabel>
 
 
@@ -160,6 +280,7 @@ function Payment() {
                   onChange={handle}
                   name="customer_email"
                   placeholder={t("name@example.com")} />
+                   {formErrors.customer_email && <div>{formErrors.customer_email}</div>}
               </FloatingLabel>
 
 
@@ -173,6 +294,7 @@ function Payment() {
                   onChange={handle}
                   name="customer_mobile"
                   placeholder={t("Mobile number")} />
+                   {formErrors.customer_mobile && <div>{formErrors.customer_mobile}</div>}
               </FloatingLabel>
 
 
@@ -186,6 +308,7 @@ function Payment() {
                   onChange={handle}
                   name="customer_pincode"
                   placeholder={t("Place / Area")} />
+                   {formErrors.customer_pincode && <div>{formErrors.customer_pincode}</div>}
               </FloatingLabel>
 
 
@@ -213,13 +336,14 @@ function Payment() {
                   as="textarea"
                   id="remarks"
                   onChange={handle}
-                  name="remark"
+                  name="remarks"
                   placeholder={t("Remarks")}
                   className="mb-3  required"
                   style={{ height: '100px' }}
                 />
+                  {formErrors.remarks && <div>{formErrors.remark}</div>}
               </FloatingLabel>
-            </Form>
+          
 
           </Col>
 
@@ -256,8 +380,9 @@ function Payment() {
 
                       id="password"
                       onChange={handle}
-                      name="Password"
+                      name="password"
                       placeholder={t("Password")} />
+                      {formErrors.password && <div>{formErrors.password}</div>}
                   </FloatingLabel>
 
 
@@ -269,8 +394,9 @@ function Payment() {
 
                       id="password"
                       onChange={handle}
-                      name="Password"
+                      name="password"
                       placeholder={t("Confirm Password")} />
+ {formErrors.password && <div>{formErrors.password}</div>}
                   </FloatingLabel>
                 </Form>
 
@@ -279,14 +405,14 @@ function Payment() {
                 <Button style={{ background: "#f5831a", borderColor: "#f5831a" }} className="border-0 me-2 mt-2 " variant="primary" type="submit">
                   {t("Continue Shopping")}
                 </Button></Link>
-              <Button className="border-0 bg-dark me-2 mt-2 " onClick={completeshopping} variant="primary" type="submit" >
+              <Button className="border-0 bg-dark me-2 mt-2 "  onClick={completeshopping} variant="primary" type="submit" >
                 {t("Complete Shopping")}
               </Button>
               {isSubmitted && <p>{t("Thank you for submitting the form!")}</p>}
             </Form>
-
+          
           </Col>
-
+          </Form>
           {/* <Col className='text-start' xs={12} md={12} sm={12} lg={1}>
           </Col> */}
 

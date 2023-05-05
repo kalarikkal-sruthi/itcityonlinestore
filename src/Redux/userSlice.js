@@ -114,7 +114,7 @@ export const login = createAsyncThunk('auth/login', async ({ customer_email, pas
 export const fetchAsyncuserdetails = createAsyncThunk('name/fetchAsyncuserdetails',
   async () => {
     try {
-      const response = await APIClient.get(`http://itcity.tectuz.com/api/getUserbyToken?customer_id=20125`)
+      const response = await APIClient.get(`http://itcity.tectuz.com/api/getUserbyToken?customer_id=23672`)
       const data = await response.data.data;
       return data;
     } catch (error) {
